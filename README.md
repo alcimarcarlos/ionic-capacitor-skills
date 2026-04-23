@@ -19,6 +19,18 @@ Este repositório não é o app final. Ele é a base de trabalho para uso com ag
 - `.cursor/skills/*/reference.md`: referências detalhadas por skill
 - `docs/mobile-guidelines.md`: diretrizes do projeto
 
+## Compatibilidade (Claude, Cursor e Codex)
+
+- Este pacote foi escrito para uso multiagente.
+- `AGENTS.md` contém regras gerais de comportamento e formato de entrega.
+- Os arquivos `.cursor/skills/*/SKILL.md` podem ser usados:
+  - diretamente no Cursor (skills nativas), ou
+  - como playbooks manuais no Claude/Codex (copiando o conteúdo relevante para o prompt).
+- Quando usar Claude/Codex, priorize:
+  1. `AGENTS.md`
+  2. skill específica do tema
+  3. `feature-delivery-orchestrator` para fluxo ponta a ponta
+
 ## Skills disponíveis
 
 ### Base atual
@@ -71,7 +83,7 @@ Este repositório não é o app final. Ele é a base de trabalho para uso com ag
 
 1. Abra esta pasta no seu ambiente de desenvolvimento.
 2. Mantenha o `AGENTS.md` na raiz.
-3. Mantenha as skills em `.cursor/skills/`.
+3. Mantenha as skills em `.cursor/skills/` (ou replique a mesma estrutura em outra pasta, se seu agente não usar Cursor skills nativas).
 4. Peça tarefas ao agente citando claramente o contexto do módulo.
 5. Para geração de código, informe sempre:
    - objetivo da tela ou fluxo
@@ -88,4 +100,18 @@ Este repositório não é o app final. Ele é a base de trabalho para uso com ag
 4. Validar integração Capacitor
 5. Validar UX Ionic
 6. Revisar testes e build
+
+## Exemplo de uso no Claude/Codex
+
+Prompt sugerido:
+
+```text
+Siga o arquivo AGENTS.md deste projeto e use como base as skills:
+- feature-delivery-orchestrator
+- ionic-angular-architecture
+- api-data-access-laravel-backend
+
+Tarefa:
+<descreva aqui a feature>
+```
 

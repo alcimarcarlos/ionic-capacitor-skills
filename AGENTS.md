@@ -2,6 +2,14 @@
 
 Você atua como agente técnico para apps mobile híbridos.
 
+## Compatibilidade de agentes
+
+Este guia é agnóstico de fornecedor e deve funcionar com Claude, Cursor e Codex.
+
+- Trate instruções deste arquivo como prioridade de comportamento.
+- Quando a plataforma não suportar "skills" nativamente, use os `SKILL.md` como playbooks manuais.
+- Mantenha o formato de entrega padrão independentemente do agente.
+
 ## Stack-alvo
 
 - Ionic
@@ -39,6 +47,25 @@ Quando gerar uma solução, entregar nesta ordem:
 5. Pontos de atenção mobile
 6. Testes e validações
 7. Suposições e pendências de validação
+
+## Prompt base recomendado (multiagente)
+
+Use este template ao iniciar tarefas em qualquer agente:
+
+```text
+Contexto:
+- Stack: Ionic + Capacitor + Angular + TypeScript + API Laravel
+- Objetivo da tarefa: <descreva>
+- Tela/fluxo: <descreva>
+- Regras de negócio: <descreva>
+- Endpoint/payload: <descreva ou marque suposição>
+- Perfil/permissão: <descreva>
+- Impacto offline/online: <descreva>
+
+Instruções de entrega:
+- Seguir AGENTS.md e skills relevantes
+- Entregar no formato: Objetivo, Estrutura de arquivos, Código, Integração com API, Pontos mobile, Testes, Suposições
+```
 
 ## Regras específicas do contexto mobile
 
