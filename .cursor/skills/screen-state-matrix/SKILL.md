@@ -1,67 +1,67 @@
 ---
 name: screen-state-matrix
-description: Gera matriz obrigatoria de estados por tela para apps Ionic Angular, cobrindo loading, success, empty, error, unauthorized e offline. Use quando implementar ou revisar telas para evitar lacunas de UX e regressao funcional.
+description: Generates a mandatory state matrix per screen for Ionic Angular apps, covering loading, success, empty, error, unauthorized, and offline. Use when implementing or reviewing screens to avoid UX gaps and functional regressions.
 ---
 
 # screen-state-matrix
 
-## Objetivo
+## Objective
 
-Evitar telas incompletas garantindo cobertura de estados de interface e transicoes.
+Avoid incomplete screens by ensuring coverage of interface states and transitions.
 
-## Aplicar quando
+## Apply When
 
-- criar tela nova
-- revisar feature pronta para release
-- detectar bug de estado nao tratado
-- validar completude de UX por fluxo
+- creating a new screen
+- reviewing a feature ready for release
+- detecting an untreated state bug
+- validating UX completeness by flow
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Mapear estados minimos: loading, success, empty, error.
-- Mapear estados condicionais: unauthorized, offline, syncing.
-- Definir evento que leva a cada estado.
-- Definir acao de recuperacao (retry, refresh, login, suporte).
-- Garantir que cada estado tenha representacao visual clara.
+- Map minimum states: loading, success, empty, error.
+- Map conditional states: unauthorized, offline, syncing.
+- Define the event that leads to each state.
+- Define the recovery action (retry, refresh, login, support).
+- Ensure each state has a clear visual representation.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Identificar fonte de dados e eventos da tela.
-2. Listar estados possiveis e criterios de entrada.
-3. Definir transicoes entre estados.
-4. Definir componente/bloco visual por estado.
-5. Validar matriz com casos de teste.
+1. Identify the screen's data source and events.
+2. List possible states and entry criteria.
+3. Define transitions between states.
+4. Define visual component/block per state.
+5. Validate the matrix with test cases.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Tratar erro como toast sem estado visual.
-- Nao diferenciar empty de erro.
-- Ignorar offline em fluxo dependente de rede.
-- Implementar retry sem idempotencia basica.
+- Treat an error as a toast without a visual state.
+- Fail to differentiate empty from error.
+- Ignore offline in a network-dependent flow.
+- Implement retry without basic idempotency.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- comportamento esperado para dados vazios
-- mensagem/acoes em cada falha
-- prioridade de suporte offline
-- regra para sessao expirada/nao autorizada
+- expected behavior for empty data
+- message/actions for each failure
+- offline support priority
+- rule for expired/unauthorized session
 
-## Limites desta skill
+## Scope Limits
 
-- cobre completude de estado de tela
-- nao cobre arquitetura completa de feature
-- nao cobre detalhamento de contrato de API
+- covers screen state completeness
+- does not cover full feature architecture
+- does not cover API contract details
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Tela de pedidos com listagem e refresh."
+Input: "Orders screen with listing and refresh."
 
-Saida esperada:
-- matriz de estados e transicoes
-- mapeamento visual por estado
-- acoes de recuperacao por falha
-- checklist de teste por estado
+Expected output:
+- state and transition matrix
+- visual mapping by state
+- recovery actions by failure
+- test checklist by state
 
-## Recursos adicionais
+## Additional Resources
 
-- Para template de matriz e casos de teste, ler `reference.md`.
+- For matrix template and test cases, read `reference.md`.

@@ -1,88 +1,88 @@
 ---
 name: feature-delivery-orchestrator
-description: Orquestra a entrega de feature mobile de ponta a ponta, do Figma ao release, acionando skills tecnicas na ordem correta e aplicando gates de qualidade. Use quando o objetivo for implementar uma feature completa com consistencia arquitetural e readiness de entrega.
+description: Orchestrates end-to-end mobile feature delivery, from Figma to release, activating technical skills in the correct order and applying quality gates. Use when the goal is to implement a complete feature with architectural consistency and delivery readiness.
 ---
 
 # feature-delivery-orchestrator
 
-## Objetivo
+## Objective
 
-Garantir fluxo unico e previsivel para entregar features completas em Ionic/Capacitor/Angular.
+Ensure a single, predictable flow for delivering complete features in Ionic/Capacitor/Angular.
 
-## Aplicar quando
+## Apply When
 
-- implementar feature nova fim a fim
-- transformar telas de design em entrega tecnica
-- reduzir retrabalho por ordem errada de implementacao
-- validar prontidao antes de merge/release
+- implementing a new feature end to end
+- turning design screens into technical delivery
+- reducing rework caused by the wrong implementation order
+- validating readiness before merge/release
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Executar fases em ordem, sem pular gates.
-- Declarar suposicoes quando faltar contrato/regra.
-- Cobrir estados de tela e riscos mobile.
-- Entregar checklist final de go/no-go.
+- Execute phases in order without skipping gates.
+- Declare assumptions when contract/rule is missing.
+- Cover screen states and mobile risks.
+- Deliver a final go/no-go checklist.
 
-## Sequencia obrigatoria de orquestracao
+## Mandatory Orchestration Sequence
 
-1. `figma-to-feature-mapping`  
-   mapear frames, fluxos, backlog e criterios de aceite.
-2. `app-shell-navigation-blueprint`  
-   garantir encaixe da feature no shell e navegacao principal.
-3. `ionic-angular-architecture`  
-   definir estrutura de arquivos e responsabilidades.
-4. `design-tokens-pipeline` + `design-system-and-ui-consistency`  
-   alinhar base visual e composicao de interface.
-5. `screen-state-matrix`  
-   cobrir estados e transicoes de tela.
-6. `api-data-access-laravel-backend` e/ou `capacitor-native-integration`  
-   integrar dados e recursos nativos necessarios.
-7. `forms-validation-and-input-masks` e/ou `list-detail-search-and-filters`  
-   completar fluxos de entrada e listagem/detalhe.
-8. `state-and-offline-mobile`  
-   aplicar cache/sync quando houver risco de conectividade.
-9. `code-generation-contract`  
-   validar formato e completude da entrega tecnica.
-10. `testing-and-release-readiness`  
-    executar gate final e decidir go/no-go.
+1. `figma-to-feature-mapping`
+   map frames, flows, backlog, and acceptance criteria.
+2. `app-shell-navigation-blueprint`
+   ensure the feature fits into the shell and main navigation.
+3. `ionic-angular-architecture`
+   define file structure and responsibilities.
+4. `design-tokens-pipeline` + `design-system-and-ui-consistency`
+   align the visual base and interface composition.
+5. `screen-state-matrix`
+   cover screen states and transitions.
+6. `api-data-access-laravel-backend` and/or `capacitor-native-integration`
+   integrate the required data and native resources.
+7. `forms-validation-and-input-masks` and/or `list-detail-search-and-filters`
+   complete input and list/detail flows.
+8. `state-and-offline-mobile`
+   apply cache/sync when there is connectivity risk.
+9. `code-generation-contract`
+   validate delivery format and technical completeness.
+10. `testing-and-release-readiness`
+    run the final gate and decide go/no-go.
 
-## Gates obrigatorios por fase
+## Mandatory Gates by Phase
 
-- Gate 1 (Descoberta): backlog por tela + criterios de aceite.
-- Gate 2 (Estrutura): rotas e arquitetura aprovadas.
-- Gate 3 (Implementacao): estados de UI + integracao concluida.
-- Gate 4 (Qualidade): checklist tecnico e riscos mapeados.
-- Gate 5 (Release): recomendacao final de go/no-go.
+- Gate 1 (Discovery): backlog by screen + acceptance criteria.
+- Gate 2 (Structure): approved routes and architecture.
+- Gate 3 (Implementation): UI states + integration completed.
+- Gate 4 (Quality): technical checklist and mapped risks.
+- Gate 5 (Release): final go/no-go recommendation.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Implementar codigo antes de mapear telas e fluxo.
-- Concluir feature sem matriz de estados.
-- Pular validacao de plataforma em fluxo nativo.
-- Declarar pronto sem gate final de release.
+- Implement code before mapping screens and flow.
+- Finish a feature without a state matrix.
+- Skip platform validation in a native flow.
+- Declare done without a final release gate.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- escopo exato da feature (telas e prioridade)
-- contrato API disponivel ou a inferir
-- dependencias nativas exigidas
-- criterio de pronto e prazo de entrega
+- exact feature scope (screens and priority)
+- available API contract or contract to infer
+- required native dependencies
+- definition of done and delivery deadline
 
-## Limites desta skill
+## Scope Limits
 
-- coordena a sequencia entre skills
-- nao substitui skills tecnicas de implementacao
-- nao define regra de negocio do produto sem contexto
+- coordinates the sequence between skills
+- does not replace technical implementation skills
+- does not define product business rules without context
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Entregar feature de pedidos do Figma ao merge."
+Input: "Deliver the orders feature from Figma to merge."
 
-Saida esperada:
-- plano por fases com skills acionadas
-- entregaveis e gates por fase
-- checklist final com go/no-go e pendencias
+Expected output:
+- phased plan with activated skills
+- deliverables and gates by phase
+- final checklist with go/no-go and pending items
 
-## Recursos adicionais
+## Additional Resources
 
-- Para playbook operacional e templates, ler `reference.md`.
+- For operational playbook and templates, read `reference.md`.

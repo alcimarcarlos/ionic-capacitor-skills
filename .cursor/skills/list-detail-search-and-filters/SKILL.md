@@ -1,70 +1,70 @@
 ---
 name: list-detail-search-and-filters
-description: Estrutura fluxos de listagem e detalhe com busca, filtros, ordenacao e paginacao em Ionic Angular. Use quando implementar telas de catalogo, historico, consultas ou qualquer experiencia list-detail no app.
+description: Structures list and detail flows with search, filters, sorting, and pagination in Ionic Angular. Use when implementing catalog, history, query screens, or any list-detail experience in the app.
 ---
 
 # list-detail-search-and-filters
 
-## Objetivo
+## Objective
 
-Padronizar experiencias list-detail com performance, previsibilidade de estado e boa UX de busca/filtro.
+Standardize list-detail experiences with performance, predictable state, and good search/filter UX.
 
-## Aplicar quando
+## Apply When
 
-- criar tela de lista com item de detalhe
-- adicionar busca com debounce
-- implementar filtros e ordenacao
-- lidar com paginação, pull-to-refresh e infinite scroll
+- creating a list screen with detail item
+- adding search with debounce
+- implementing filters and sorting
+- handling pagination, pull-to-refresh, and infinite scroll
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Definir estado da lista (`loading`, `ready`, `empty`, `error`).
-- Busca com debounce e cancelamento de requisicoes concorrentes.
-- Filtros com estado controlado e reset previsivel.
-- Paginacao coerente (cursor ou page-based) com append seguro.
-- Navegacao lista -> detalhe sem perder contexto quando retornar.
+- Define list state (`loading`, `ready`, `empty`, `error`).
+- Search with debounce and cancellation of concurrent requests.
+- Filters with controlled state and predictable reset.
+- Coherent pagination (cursor or page-based) with safe append.
+- List -> detail navigation without losing context when returning.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Definir contrato de query (search, filters, sort, page/cursor).
-2. Criar estado local da tela (itens, meta, filtros aplicados).
-3. Implementar busca com debounce e distinct.
-4. Implementar filtros (abrir, aplicar, limpar) com persistencia opcional.
-5. Integrar navegacao para detalhe com retorno ao ponto anterior.
-6. Validar estados de erro, vazio e fim de lista.
+1. Define the query contract (search, filters, sort, page/cursor).
+2. Create local screen state (items, meta, applied filters).
+3. Implement search with debounce and distinct.
+4. Implement filters (open, apply, clear) with optional persistence.
+5. Integrate navigation to detail with return to the previous point.
+6. Validate error, empty, and end-of-list states.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Disparar request a cada tecla sem debounce.
-- Perder filtros ao navegar e voltar sem justificativa.
-- Duplicar itens em paginacao por merge incorreto.
-- Tratar empty state como erro tecnico.
+- Trigger a request on every keystroke without debounce.
+- Lose filters on navigate-and-return without justification.
+- Duplicate items in pagination due to incorrect merge.
+- Treat empty state as a technical error.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- campos de busca e operadores permitidos
-- filtros disponiveis e combinacoes validas
-- regra de ordenacao default
-- tamanho de pagina e estrategia de scroll
-- expectativa de persistencia de filtros entre sessoes
+- search fields and allowed operators
+- available filters and valid combinations
+- default sorting rule
+- page size and scroll strategy
+- expectation for filter persistence between sessions
 
-## Limites desta skill
+## Scope Limits
 
-- cobre fluxo de listagem, busca, filtros e detalhe
-- nao cobre regras profundas de cache/sync offline (usar `state-and-offline-mobile`)
-- nao cobre especificacao total de endpoint (usar `api-data-access-laravel-backend`)
-- nao substitui tuning de performance de render (usar `mobile-performance-and-rendering`)
+- covers listing, search, filters, and detail flow
+- does not cover deep offline cache/sync rules (use `state-and-offline-mobile`)
+- does not cover full endpoint specification (use `api-data-access-laravel-backend`)
+- does not replace render performance tuning (use `mobile-performance-and-rendering`)
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Tela de pedidos com busca por cliente, filtro por status e detalhe."
+Input: "Orders screen with customer search, status filter, and detail."
 
-Saida esperada:
-- estado de lista com meta de paginação
-- busca com debounce de 300-500ms
-- filtros aplicaveis e botao limpar
-- navegacao para detalhe preservando filtros e posicao da lista
+Expected output:
+- list state with pagination meta
+- search with 300-500ms debounce
+- applicable filters and clear button
+- navigation to detail preserving filters and list position
 
-## Recursos adicionais
+## Additional Resources
 
-- Para contratos de query e checklist de UX, ler `reference.md`.
+- For query contracts and UX checklist, read `reference.md`.

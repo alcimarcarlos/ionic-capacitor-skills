@@ -1,78 +1,77 @@
 ---
 name: state-and-offline-mobile
-description: Define estratégia de estado local, cache e sincronização offline/online para apps móveis, com foco em resiliência e previsibilidade. Use quando houver conectividade instável, fila offline, persistência temporária ou reconciliação de dados.
+description: Defines local state, cache, and offline/online synchronization strategy for mobile apps, focused on resilience and predictability. Use when there is unstable connectivity, offline queue, temporary persistence, or data reconciliation.
 ---
 
 # state-and-offline-mobile
 
-## Objetivo
+## Objective
 
-Definir estratégia de estado e operação offline/online em apps móveis.
+Define state and offline/online operation strategy in mobile apps.
 
-## Aplicar quando
+## Apply When
 
-- a tela depende de cache
-- precisa funcionar sem internet estável
-- existe sincronização posterior
-- há filas locais ou persistência temporária
+- the screen depends on cache
+- it needs to work without stable internet
+- later synchronization exists
+- there are local queues or temporary persistence
 
-## Requisitos obrigatórios
+## Mandatory Requirements
 
-- Separar estado efêmero (UI) de estado persistido (cache/fila local).
-- Definir fonte de verdade por cenário (local, remota ou híbrida).
-- Explicitar política de invalidação de cache e sincronização.
-- Tratar reconciliação de conflitos quando houver escrita offline.
-- Expor status para UI (`offline`, `syncing`, `error`, `ready`).
+- Separate ephemeral state (UI) from persisted state (cache/local queue).
+- Define the source of truth by scenario (local, remote, or hybrid).
+- Explicitly define cache invalidation and synchronization policy.
+- Handle conflict reconciliation when offline writes exist.
+- Expose status to the UI (`offline`, `syncing`, `error`, `ready`).
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Mapear dados críticos e tolerância à desatualização.
-2. Definir armazenamento local (memória, storage, sqlite, etc.).
-3. Definir estratégia de leitura (cache-first, network-first ou stale-while-revalidate).
-4. Definir fila de ações offline e política de retry.
-5. Definir tratamento de conflito (last-write-wins, merge, bloqueio).
-6. Validar transição offline -> online com feedback na UI.
+1. Map critical data and staleness tolerance.
+2. Define local storage (memory, storage, sqlite, etc.).
+3. Define reading strategy (cache-first, network-first, or stale-while-revalidate).
+4. Define offline action queue and retry policy.
+5. Define conflict handling (last-write-wins, merge, blocking).
+6. Validate offline -> online transition with UI feedback.
 
-## Anti-padrões (não fazer)
+## Anti-Patterns (Do Not Do)
 
-- Persistir todo estado sem critério.
-- Esconder falha de sincronização do usuário.
-- Misturar regras de fila/sync diretamente na page.
-- Ignorar idempotência em operações de reenvio.
+- Persist all state without criteria.
+- Hide synchronization failure from the user.
+- Mix queue/sync rules directly in the page.
+- Ignore idempotency in retry operations.
 
-## Formato de entrega esperado
+## Expected Delivery Format
 
-1. Estratégia de estado e cache.
-2. Fluxo offline/online com eventos principais.
-3. Regras de sincronização e conflito.
-4. Riscos e mitigação.
-5. Checklist de testes em conectividade instável.
+1. State and cache strategy.
+2. Offline/online flow with main events.
+3. Synchronization and conflict rules.
+4. Risks and mitigation.
+5. Test checklist under unstable connectivity.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- quais dados podem ficar desatualizados e por quanto tempo
-- operações que precisam funcionar offline (read/write)
-- regra de conflito esperada pelo negócio
-- limite de armazenamento local e retenção
-- comportamento esperado ao reconectar
+- which data may become stale and for how long
+- operations that need to work offline (read/write)
+- conflict rule expected by the business
+- local storage and retention limits
+- expected behavior when reconnecting
 
-## Limites desta skill
+## Scope Limits
 
-- cobre estado local, cache, fila e sincronização
-- não cobre estrutura completa de páginas/rotas (usar `ionic-angular-architecture`)
-- não cobre detalhes de permissão/plugin nativo (usar `capacitor-native-integration`)
+- covers local state, cache, queue, and synchronization
+- does not cover full page/route structure (use `ionic-angular-architecture`)
+- does not cover native plugin/permission details (use `capacitor-native-integration`)
 
-## Exemplo rápido (entrada -> saída)
+## Quick Example (Input -> Output)
 
-Entrada: "Salvar apontamentos offline e sincronizar quando voltar internet."
+Input: "Save notes offline and sync when internet returns."
 
-Saída esperada:
-- store local com status `pending/synced/failed`
-- fila de sync com retry exponencial e idempotência
-- regra de conflito (ex.: last-write-wins com log de divergência)
-- checklist: offline create, reconexão, erro de sync, retry manual
+Expected output:
+- local store with `pending/synced/failed` status
+- sync queue with exponential retry and idempotency
+- conflict rule (for example: last-write-wins with divergence log)
+- checklist: offline create, reconnect, sync error, manual retry
 
-## Recursos adicionais
+## Additional Resources
 
-- Para estratégias de cache/sync por cenário, ler `reference.md`.
-
+- For cache/sync strategies by scenario, read `reference.md`.

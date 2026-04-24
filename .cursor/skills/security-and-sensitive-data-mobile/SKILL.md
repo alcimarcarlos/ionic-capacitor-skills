@@ -1,67 +1,67 @@
 ---
 name: security-and-sensitive-data-mobile
-description: Define praticas de seguranca para dados sensiveis em apps Ionic Capacitor, cobrindo armazenamento seguro, sessao, biometria e protecao de informacao em transito e em repouso. Use quando houver autenticacao, tokens, dados pessoais ou operacoes criticas.
+description: Defines security practices for sensitive data in Ionic Capacitor apps, covering secure storage, session, biometrics, and protection of information in transit and at rest. Use when there is authentication, tokens, personal data, or critical operations.
 ---
 
 # security-and-sensitive-data-mobile
 
-## Objetivo
+## Objective
 
-Reduzir risco de exposicao de dados e fortalecer controles de sessao no app mobile.
+Reduce data exposure risk and strengthen session controls in the mobile app.
 
-## Aplicar quando
+## Apply When
 
-- implementar login/sessao/token
-- armazenar dados sensiveis localmente
-- proteger operacoes criticas com biometria/pin
-- revisar risco de seguranca antes de release
+- implementing login/session/token
+- storing sensitive data locally
+- protecting critical operations with biometrics/pin
+- reviewing security risk before release
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Nao armazenar segredo sensivel em storage inseguro.
-- Centralizar estrategia de sessao e expiracao.
-- Evitar log de dados sensiveis (token, documento, email completo).
-- Definir politica de limpeza de sessao no logout.
-- Proteger acao critica com camada adicional quando exigido.
+- Do not store sensitive secrets in insecure storage.
+- Centralize session and expiration strategy.
+- Avoid logging sensitive data (token, document, full email).
+- Define a session cleanup policy on logout.
+- Protect critical actions with an additional layer when required.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Classificar dados por nivel de sensibilidade.
-2. Definir armazenamento e ciclo de vida por tipo de dado.
-3. Implementar controle de sessao e renovacao segura.
-4. Revisar logs, erros e traces para evitar vazamento.
-5. Validar cenarios de risco e recuperacao.
+1. Classify data by sensitivity level.
+2. Define storage and lifecycle by data type.
+3. Implement session control and secure renewal.
+4. Review logs, errors, and traces to avoid leakage.
+5. Validate risk and recovery scenarios.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Persistir token em local de facil extracao sem justificativa.
-- Exibir dado sensivel completo em tela/log.
-- Manter sessao ativa sem controle de expiracao.
-- Tratar falha de auth sem acao de revogacao/limpeza.
+- Persist a token in an easily extractable location without justification.
+- Display complete sensitive data on screen/log.
+- Keep session active without expiration control.
+- Handle auth failure without revocation/cleanup action.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- requisitos de compliance e politica interna
-- nivel de sensibilidade dos dados
-- estrategia de autenticacao (token, sessao, biometria)
-- tempo de sessao e regras de renovacao
+- compliance and internal policy requirements
+- sensitivity level of the data
+- authentication strategy (token, session, biometrics)
+- session duration and renewal rules
 
-## Limites desta skill
+## Scope Limits
 
-- cobre seguranca de sessao e dados sensiveis no app
-- nao cobre pentest ou seguranca de infraestrutura backend
-- nao cobre UX detalhada de telas
+- covers session security and sensitive data in the app
+- does not cover pentest or backend infrastructure security
+- does not cover detailed screen UX
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Revisar seguranca do fluxo de login e perfil."
+Input: "Review security for login and profile flow."
 
-Saida esperada:
-- mapa de dados sensiveis e armazenamento
-- ajustes de sessao/logout/expiracao
-- revisao de logs e mascaramento
-- checklist de riscos e mitigacao
+Expected output:
+- sensitive data and storage map
+- session/logout/expiration adjustments
+- log review and masking
+- risks and mitigation checklist
 
-## Recursos adicionais
+## Additional Resources
 
-- Para checklist de controles minimos, ler `reference.md`.
+- For minimum controls checklist, read `reference.md`.

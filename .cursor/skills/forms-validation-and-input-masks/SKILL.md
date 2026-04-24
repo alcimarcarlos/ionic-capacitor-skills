@@ -1,67 +1,67 @@
 ---
 name: forms-validation-and-input-masks
-description: Implementa formularios mobile com validacao robusta, mascaras e UX de erro consistente em Ionic Angular. Use quando criar ou refatorar telas de cadastro, login, perfil, filtros e qualquer entrada de dados do usuario.
+description: Implements mobile forms with robust validation, masks, and consistent error UX in Ionic Angular. Use when creating or refactoring signup, login, profile, filter screens, and any user data input.
 ---
 
 # forms-validation-and-input-masks
 
-## Objetivo
+## Objective
 
-Padronizar formularios com validacao, mascaras e feedback claro para reduzir erro de preenchimento e retrabalho.
+Standardize forms with validation, masks, and clear feedback to reduce input errors and rework.
 
-## Aplicar quando
+## Apply When
 
-- criar formulario de cadastro/login/perfil
-- validar campos obrigatorios e formatos
-- aplicar mascara de telefone, documento, moeda ou data
-- melhorar experiencia de submit e mensagens de erro
+- creating a signup/login/profile form
+- validating required fields and formats
+- applying phone, document, currency, or date masks
+- improving submit experience and error messages
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Usar `ReactiveForms` para formularios com regra de negocio.
-- Validar no cliente com mensagens claras por campo.
-- Tratar validacao de backend (`422`) com mapeamento para campos.
-- Bloquear submit invalido e mostrar estado de envio.
-- Aplicar mascara apenas quando agrega UX e nao quebra acessibilidade.
+- Use `ReactiveForms` for forms with business rules.
+- Validate on the client with clear messages per field.
+- Handle backend validation (`422`) with field mapping.
+- Block invalid submit and show submission state.
+- Apply masks only when they improve UX and do not break accessibility.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Definir contrato dos campos (tipo, obrigatoriedade, formato).
-2. Criar `FormGroup` com validators sincronos/assincronos.
-3. Implementar mascaras e normalizacao de entrada.
-4. Mapear erros locais e remotos para mensagens consistentes.
-5. Validar fluxo completo: preencher, erro, correcao e submit.
+1. Define the field contract (type, requiredness, format).
+2. Create `FormGroup` with synchronous/asynchronous validators.
+3. Implement masks and input normalization.
+4. Map local and remote errors to consistent messages.
+5. Validate the complete flow: fill, error, correction, and submit.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Validar somente no backend sem feedback imediato.
-- Mostrar erro tecnico bruto para usuario final.
-- Permitir multiplos submits em paralelo.
-- Usar mascara que altera valor sem controle de parse.
+- Validate only on the backend without immediate feedback.
+- Show raw technical errors to the end user.
+- Allow multiple parallel submits.
+- Use a mask that changes the value without controlled parsing.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- campos obrigatorios e regras de cada campo
-- formato esperado pelo backend (valor mascarado ou limpo)
-- comportamento de erro por campo e erro global
-- necessidade de validacao assincorna (ex.: email unico)
+- required fields and rules for each field
+- format expected by the backend (masked or clean value)
+- field error and global error behavior
+- need for asynchronous validation (for example: unique email)
 
-## Limites desta skill
+## Scope Limits
 
-- cobre UX de formulario, validacao e entrada de dados
-- nao cobre navegacao entre telas (usar `ionic-angular-architecture`)
-- nao cobre contratos HTTP completos (usar `api-data-access-laravel-backend`)
+- covers form UX, validation, and data input
+- does not cover navigation between screens (use `ionic-angular-architecture`)
+- does not cover full HTTP contracts (use `api-data-access-laravel-backend`)
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Tela de cadastro com nome, telefone e email."
+Input: "Signup screen with name, phone, and email."
 
-Saida esperada:
-- `FormGroup` com validators (`required`, `email`, `minLength`)
-- mascara de telefone com persistencia do valor limpo
-- tratamento de `422` mapeando erro por campo
-- botao submit com estado `loading` e bloqueio de duplo clique
+Expected output:
+- `FormGroup` with validators (`required`, `email`, `minLength`)
+- phone mask with clean value persistence
+- `422` handling mapped by field
+- submit button with `loading` state and double-click blocking
 
-## Recursos adicionais
+## Additional Resources
 
-- Para matriz de validacao e padrao de mensagens, ler `reference.md`.
+- For validation matrix and message pattern, read `reference.md`.

@@ -1,80 +1,79 @@
 ---
 name: ionic-angular-architecture
-description: Organiza arquitetura Ionic Angular por feature com pages enxutas, components reutilizáveis, services de domínio e rotas previsíveis. Use quando criar/refatorar telas, navegação, módulos ou estrutura de pastas.
+description: Organizes Ionic Angular architecture by feature with lean pages, reusable components, domain services, and predictable routes. Use when creating/refactoring screens, navigation, modules, or folder structure.
 ---
 
 # ionic-angular-architecture
 
-## Objetivo
+## Objective
 
-Definir estrutura de app Ionic + Angular com boa separação de responsabilidades.
+Define an Ionic + Angular app structure with strong separation of responsibilities.
 
-## Aplicar quando
+## Apply When
 
-- criar nova feature
-- reorganizar páginas
-- definir estrutura de pastas
-- criar componentes reutilizáveis
-- desenhar rotas e navegação
+- creating a new feature
+- reorganizing pages
+- defining folder structure
+- creating reusable components
+- designing routes and navigation
 
-## Requisitos obrigatórios
+## Mandatory Requirements
 
-- Organizar por feature (pasta da funcionalidade com page/components/services/models).
-- Manter page components enxutos (orquestração + binding de UI).
-- Isolar regras de negócio em services/facades/use-cases.
-- Preferir componentes Ionic para estrutura visual e UX mobile.
-- Separar model de API de model de apresentação.
-- Definir rotas com lazy loading e guards quando necessário.
+- Organize by feature (feature folder with page/components/services/models).
+- Keep page components lean (orchestration + UI binding).
+- Isolate business rules in services/facades/use-cases.
+- Prefer Ionic components for visual structure and mobile UX.
+- Separate API model from presentation model.
+- Define routes with lazy loading and guards when needed.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Definir fronteiras da feature (dados, UI e navegação).
-2. Propor árvore de arquivos com responsabilidade por camada.
-3. Implementar page/container com mínimo de lógica.
-4. Implementar components reutilizáveis e services de domínio.
-5. Configurar rotas, guards e resolvers quando fizer sentido.
-6. Validar estados de loading/erro/vazio/sucesso na tela.
+1. Define feature boundaries (data, UI, and navigation).
+2. Propose a file tree with responsibility by layer.
+3. Implement page/container with minimal logic.
+4. Implement reusable components and domain services.
+5. Configure routes, guards, and resolvers when useful.
+6. Validate loading/error/empty/success states on the screen.
 
-## Anti-padrões (não fazer)
+## Anti-Patterns (Do Not Do)
 
-- Concentrar lógica de negócio dentro de page component.
-- Reutilizar componente acoplado a endpoint específico.
-- Misturar decisões de navegação com chamada HTTP em vários pontos.
-- Criar estrutura por tipo técnico global quando a feature exige coesão local.
+- Concentrate business logic inside a page component.
+- Reuse a component coupled to a specific endpoint.
+- Mix navigation decisions with HTTP calls in multiple places.
+- Create a global technical-type structure when the feature needs local cohesion.
 
-## Formato de entrega esperado
+## Expected Delivery Format
 
-1. Objetivo e escopo da feature.
-2. Árvore de arquivos proposta.
-3. Responsabilidade de cada arquivo.
-4. Código base (page/component/service/route).
-5. Pontos de atenção de navegação, estado e evolução futura.
+1. Feature objective and scope.
+2. Proposed file tree.
+3. Responsibility of each file.
+4. Base code (page/component/service/route).
+5. Navigation, state, and future evolution considerations.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- fluxo de navegação esperado (origem/destino/guards)
-- responsabilidades da feature e limites com outras features
-- regras de negócio principais da tela
-- dependências externas (API, plugin nativo, storage)
-- padrão existente no projeto (standalone, módulos, convenções)
+- expected navigation flow (origin/destination/guards)
+- feature responsibilities and boundaries with other features
+- main business rules of the screen
+- external dependencies (API, native plugin, storage)
+- existing project pattern (standalone, modules, conventions)
 
-## Limites desta skill
+## Scope Limits
 
-- cobre organização de UI, navegação e separação de responsabilidades
-- não cobre detalhes profundos de integração nativa (usar `capacitor-native-integration`)
-- não cobre especificação completa de contratos Laravel (usar `api-data-access-laravel-backend`)
+- covers UI organization, navigation, and separation of responsibilities
+- does not cover deep native integration details (use `capacitor-native-integration`)
+- does not cover complete Laravel contract specification (use `api-data-access-laravel-backend`)
 
-## Exemplo rápido (entrada -> saída)
+## Quick Example (Input -> Output)
 
-Entrada: "Criar feature de pedidos com lista e detalhe."
+Input: "Create an orders feature with list and detail."
 
-Saída esperada:
-- árvore `features/orders/{pages,components,services,models}`
-- `orders.page.ts` apenas orquestrando estado e eventos de UI
-- `orders-facade.service.ts` com regras de negócio
-- rotas com lazy loading para lista/detalhe e guard quando necessário
+Expected output:
+- `features/orders/{pages,components,services,models}` tree
+- `orders.page.ts` only orchestrating state and UI events
+- `orders-facade.service.ts` with business rules
+- lazy-loaded routes for list/detail and guard when needed
 
-## Recursos adicionais
+## Additional Resources
 
-- Para templates de estrutura por feature, ler `reference.md`.
-
+- For feature structure templates, read `reference.md`.

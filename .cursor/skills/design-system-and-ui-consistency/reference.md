@@ -1,22 +1,22 @@
 # Design System and UI Consistency Reference
 
-## Template de tokens
+## Token Template
 
-- Cores: `--color-primary`, `--color-secondary`, `--color-surface`, `--color-danger`
-- Tipografia: `--font-size-sm/md/lg`, `--font-weight-regular/semibold/bold`
-- Espacamento: `--space-4/8/12/16/24`
-- Raio: `--radius-sm/md/lg`
+- Colors: `--color-primary`, `--color-secondary`, `--color-surface`, `--color-danger`
+- Typography: `--font-size-sm/md/lg`, `--font-weight-regular/semibold/bold`
+- Spacing: `--space-4/8/12/16/24`
+- Radius: `--radius-sm/md/lg`
 
-## Checklist de consistencia
+## Consistency Checklist
 
-- mesmo padrao de header, titulo e area de acao
-- mesma hierarquia tipografica para titulos/subtitulos
-- botoes com estados (normal, disabled, loading)
-- cards/listas com espacamento e borda consistentes
-- estados de loading/empty/error presentes
+- same header, title, and action area pattern
+- same typographic hierarchy for titles/subtitles
+- buttons with states (normal, disabled, loading)
+- cards/lists with consistent spacing and border
+- loading/empty/error states present
 
-## Gate rapido de aprovacao visual
+## Quick Visual Approval Gate
 
-1. Conferencia com frame Figma de referencia
-2. Responsividade minima (small e large phones)
-3. Dark mode/fundo alternativo, se aplicavel
+1. Check against reference Figma frame
+2. Minimum responsiveness (small and large phones)
+3. Dark mode/alternate background, if applicable

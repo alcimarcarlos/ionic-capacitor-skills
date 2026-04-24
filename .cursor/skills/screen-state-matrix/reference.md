@@ -1,15 +1,15 @@
 # Screen State Matrix Reference
 
-## Template de matriz
+## Matrix Template
 
-- estado:
-- condicao de entrada:
-- UI exibida:
-- acao do usuario:
-- transicao possivel:
-- criterio de teste:
+- state:
+- entry condition:
+- displayed UI:
+- user action:
+- possible transition:
+- test criterion:
 
-## Estados base
+## Base States
 
 - loading
 - success

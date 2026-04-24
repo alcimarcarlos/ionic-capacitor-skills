@@ -1,22 +1,22 @@
 # List Detail Search and Filters Reference
 
-## Contrato de query sugerido
+## Suggested Query Contract
 
-- `search`: string opcional
-- `filters`: objeto com pares chave/valor
-- `sort`: campo + direcao (`asc`/`desc`)
-- `page` e `per_page` (ou `cursor`)
+- `search`: optional string
+- `filters`: object with key/value pairs
+- `sort`: field + direction (`asc`/`desc`)
+- `page` and `per_page` (or `cursor`)
 
-## Checklist de UX para lista
+## List UX Checklist
 
-- loading inicial com skeleton
-- empty state com acao sugerida
-- erro com retry
+- initial loading with skeleton
+- empty state with suggested action
+- error with retry
 - pull-to-refresh
-- fim de lista claro no infinite scroll
+- clear end of list in infinite scroll
 
-## Preservacao de contexto
+## Context Preservation
 
-1. guardar filtros atuais
-2. guardar posicao/scroll da lista
-3. restaurar estado ao voltar do detalhe
+1. store current filters
+2. store list position/scroll
+3. restore state when returning from detail

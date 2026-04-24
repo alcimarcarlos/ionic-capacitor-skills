@@ -1,68 +1,68 @@
 ---
 name: code-generation-contract
-description: Impoe contrato de saida obrigatorio para geracao de codigo Ionic Angular, garantindo consistencia de arquitetura, integracao, estados de tela e validacao. Use quando solicitar implementacao de qualquer tela, fluxo ou feature.
+description: Enforces a mandatory output contract for Ionic Angular code generation, ensuring architecture, integration, screen states, and validation consistency. Use when requesting implementation of any screen, flow, or feature.
 ---
 
 # code-generation-contract
 
-## Objetivo
+## Objective
 
-Padronizar o formato e o nivel minimo de completude das entregas do agente.
+Standardize the format and minimum completeness level of agent deliveries.
 
-## Aplicar quando
+## Apply When
 
-- gerar nova tela/feature
-- refatorar fluxo existente
-- solicitar implementacao ponta a ponta
-- revisar se resposta esta completa para execucao
+- generating a new screen/feature
+- refactoring an existing flow
+- requesting end-to-end implementation
+- reviewing whether a response is complete enough to execute
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Entregar estrutura de arquivos antes do codigo.
-- Declarar contratos de dados (DTO/interface) ou suposicoes explicitas.
-- Cobrir estados de UI (loading, success, empty, error).
-- Incluir pontos de atencao mobile (web/Android/iOS).
-- Incluir checklist de teste minimo por fluxo critico.
+- Deliver file structure before code.
+- Declare data contracts (DTO/interface) or explicit assumptions.
+- Cover UI states (loading, success, empty, error).
+- Include mobile considerations (web/Android/iOS).
+- Include minimum test checklist per critical flow.
 
-## Formato de saida obrigatorio
+## Mandatory Output Format
 
-1. Objetivo
-2. Estrutura de arquivos
-3. Codigo
-4. Integracao com API
-5. Pontos de atencao mobile
-6. Testes e validacoes
-7. Suposicoes e pendencias
+1. Objective
+2. File structure
+3. Code
+4. API integration
+5. Mobile considerations
+6. Tests and validations
+7. Assumptions and pending items
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Entregar apenas trecho de codigo sem contexto de integracao.
-- Omitir estado de erro e vazio.
-- Omitir risco/plataforma em fluxo com recurso nativo.
-- Declarar "pronto" sem checklist minimo.
+- Deliver only a code snippet without integration context.
+- Omit error and empty states.
+- Omit risk/platform notes in a flow with native resources.
+- Declare "done" without a minimum checklist.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- endpoint e payload esperados
-- regra de negocio principal
-- perfil/permissao por fluxo
-- prioridade de plataforma e prazo
+- expected endpoint and payload
+- main business rule
+- role/permission by flow
+- platform priority and deadline
 
-## Limites desta skill
+## Scope Limits
 
-- cobre padrao de entrega e qualidade minima
-- nao substitui skills tecnicas especificas por dominio
+- covers delivery format and minimum quality
+- does not replace domain-specific technical skills
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Crie tela de detalhe com acao de aprovar."
+Input: "Create a detail screen with an approve action."
 
-Saida esperada:
-- arvore de arquivos da feature
+Expected output:
+- feature file tree
 - page/component/service/DTO
-- estados da tela e fluxo de erro
-- checklist de teste do fluxo de aprovacao
+- screen states and error flow
+- approval flow test checklist
 
-## Recursos adicionais
+## Additional Resources
 
-- Para checklist detalhado de conformidade, ler `reference.md`.
+- For detailed compliance checklist, read `reference.md`.

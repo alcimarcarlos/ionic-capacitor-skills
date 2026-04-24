@@ -1,85 +1,84 @@
 ---
 name: testing-and-release-readiness
-description: Valida prontidão técnica de feature mobile para merge/release com checklist de build, testes, riscos e compatibilidade Android/iOS/web. Use no fechamento de feature, revisão final de PR ou preparação de release.
+description: Validates technical readiness of a mobile feature for merge/release with build, tests, risks, and Android/iOS/web compatibility checklist. Use when closing a feature, final PR review, or preparing a release.
 ---
 
 # testing-and-release-readiness
 
-## Objetivo
+## Objective
 
-Garantir que a entrega esteja pronta para validação técnica e operacional.
+Ensure the delivery is ready for technical and operational validation.
 
-## Aplicar quando
+## Apply When
 
-- finalizar feature
-- revisar PR
-- validar release
-- checar impacto mobile
+- finalizing a feature
+- reviewing a PR
+- validating a release
+- checking mobile impact
 
-## Requisitos obrigatórios
+## Mandatory Requirements
 
-- Validar cobertura de estados de tela definida pela `screen-state-matrix`.
-- Validar fluxos críticos ponta a ponta (login, navegação principal, ação de negócio-chave).
-- Verificar compatibilidade web e dispositivo quando houver plugin nativo.
-- Identificar riscos de build/configuração/permissões.
-- Entregar checklist objetivo para gate de release.
-- Consolidar riscos de acessibilidade, performance e segurança quando aplicável.
+- Validate screen state coverage defined by `screen-state-matrix`.
+- Validate critical flows end to end (login, main navigation, key business action).
+- Check web and device compatibility when there is a native plugin.
+- Identify build/configuration/permission risks.
+- Deliver an objective checklist for the release gate.
+- Consolidate accessibility, performance, and security risks when applicable.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Revisar mudanças por risco (dados, UI, nativo, autenticação, estado).
-2. Definir suite mínima: unit, integração e smoke manual.
-3. Executar validações de build e dependências.
-4. Validar comportamento em Android/iOS (ou declarar limitações).
-5. Consolidar riscos, impacto e critérios de aprovação.
+1. Review changes by risk (data, UI, native, authentication, state).
+2. Define minimum suite: unit, integration, and manual smoke.
+3. Run build and dependency validations.
+4. Validate behavior on Android/iOS (or declare limitations).
+5. Consolidate risks, impact, and approval criteria.
 
-## Checklist base de validação
+## Base Validation Checklist
 
-- `ionic build` concluído sem erro.
-- Rotas e guards principais funcionando nos fluxos críticos.
-- chamadas de API cobrem sucesso, timeout e erro de validação (`422`).
-- permissões nativas (quando aplicável) cobrem aceite, recusa e recusa permanente.
-- sem regressão visual crítica em Android, iOS e web (quando suportado).
+- `ionic build` completed without errors.
+- Main routes and guards working in critical flows.
+- API calls cover success, timeout, and validation error (`422`).
+- Native permissions (when applicable) cover acceptance, denial, and permanent denial.
+- No critical visual regression on Android, iOS, and web (when supported).
 
-## Anti-padrões (não fazer)
+## Anti-Patterns (Do Not Do)
 
-- Declarar "pronto para release" sem checklist explícito.
-- Ignorar cenário de falha de rede/timeout.
-- Validar apenas em web quando há funcionalidade nativa.
-- Não registrar riscos conhecidos e plano de mitigação.
+- Declare "ready for release" without an explicit checklist.
+- Ignore network failure/timeout scenario.
+- Validate only on web when there is native functionality.
+- Fail to record known risks and mitigation plan.
 
-## Formato de entrega esperado
+## Expected Delivery Format
 
-1. Checklist técnico preenchido.
-2. Riscos e severidade.
-3. Testes executados/sugeridos.
-4. Observações de build/release (Android, iOS, web).
+1. Filled technical checklist.
+2. Risks and severity.
+3. Tests executed/suggested.
+4. Build/release notes (Android, iOS, web).
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- plataformas alvo para release (Android/iOS/web)
-- quais fluxos são considerados críticos para o negócio
-- requisitos mínimos de cobertura de teste
-- tipo de distribuição (interna, beta, loja)
-- restrições de prazo que afetam escopo de validação
+- target platforms for release (Android/iOS/web)
+- which flows are business-critical
+- minimum test coverage requirements
+- distribution type (internal, beta, store)
+- time constraints affecting validation scope
 
-## Limites desta skill
+## Scope Limits
 
-- cobre validação final e readiness de entrega
-- não define arquitetura da feature (usar `ionic-angular-architecture`)
-- não substitui especificação de integração API/plugin (usar skills específicas)
-- não substitui análise dedicada de performance, acessibilidade ou segurança
+- covers final validation and delivery readiness
+- does not define feature architecture (use `ionic-angular-architecture`)
+- does not replace API/plugin integration specification (use specific skills)
+- does not replace dedicated performance, accessibility, or security analysis
 
-## Exemplo rápido (entrada -> saída)
+## Quick Example (Input -> Output)
 
-Entrada: "Feature de login pronta, validar antes do merge."
+Input: "Login feature is ready, validate before merge."
 
-Saída esperada:
-- checklist preenchido com comandos e evidências
-- riscos classificados (alto/médio/baixo) com impacto
-- lacunas de teste e recomendação objetiva de go/no-go
+Expected output:
+- filled checklist with commands and evidence
+- classified risks (high/medium/low) with impact
+- test gaps and objective go/no-go recommendation
 
-## Recursos adicionais
+## Additional Resources
 
-- Para matriz de validação e gates de release, ler `reference.md`.
-
+- For validation matrix and release gates, read `reference.md`.

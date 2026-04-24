@@ -1,68 +1,68 @@
 ---
 name: mobile-performance-and-rendering
-description: Otimiza performance de renderizacao em apps Ionic Angular, cobrindo listas, imagens, ciclo de deteccao e carregamento progressivo. Use quando telas apresentarem lentidao, jank, consumo excessivo ou risco de regressao de performance.
+description: Optimizes rendering performance in Ionic Angular apps, covering lists, images, detection cycle, and progressive loading. Use when screens show slowness, jank, excessive consumption, or performance regression risk.
 ---
 
 # mobile-performance-and-rendering
 
-## Objetivo
+## Objective
 
-Melhorar fluidez e tempo de resposta da interface em web, Android e iOS.
+Improve interface smoothness and response time on web, Android, and iOS.
 
-## Aplicar quando
+## Apply When
 
-- listas grandes com scroll travando
-- telas com carregamento visual lento
-- consumo elevado de memoria/cpu
-- revisao de performance antes de release
+- large lists have stuck/janky scroll
+- screens have slow visual loading
+- memory/cpu consumption is high
+- reviewing performance before release
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Evitar renderizacao desnecessaria em loops e bindings pesados.
-- Aplicar estrategia de carregamento para imagens e conteudo.
-- Usar paginacao/virtualizacao em listas extensas quando cabivel.
-- Definir skeleton/loading perceptivel para reduzir espera percebida.
-- Medir impacto com criterio objetivo antes/depois.
+- Avoid unnecessary rendering in loops and heavy bindings.
+- Apply a loading strategy for images and content.
+- Use pagination/virtualization in large lists when appropriate.
+- Define perceptible skeleton/loading to reduce perceived wait.
+- Measure impact with an objective before/after criterion.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Identificar gargalo principal (lista, imagem, change detection, network).
-2. Aplicar otimizacao no ponto critico.
-3. Reduzir trabalho de render por interacao.
-4. Validar em dispositivo real quando possivel.
-5. Registrar ganho e riscos residuais.
+1. Identify the main bottleneck (list, image, change detection, network).
+2. Apply optimization at the critical point.
+3. Reduce render work per interaction.
+4. Validate on a real device when possible.
+5. Record gains and residual risks.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Otimizar sem medir sintoma real.
-- Carregar lista completa sem necessidade.
-- Re-renderizar componentes a cada evento global.
-- Ignorar performance em device de menor capacidade.
+- Optimize without measuring a real symptom.
+- Load the entire list unnecessarily.
+- Re-render components on every global event.
+- Ignore performance on lower-capacity devices.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- dispositivos alvo e baseline de performance
-- tamanho medio/maximo de listas e midias
-- metas de UX (tempo de abertura, scroll fluido)
-- fluxo mais critico para usuario
+- target devices and performance baseline
+- average/maximum list and media size
+- UX goals (opening time, smooth scroll)
+- most critical user flow
 
-## Limites desta skill
+## Scope Limits
 
-- cobre performance de UI/renderizacao
-- nao cobre seguranca de dados sensiveis
-- nao cobre modelagem completa de arquitetura
-- nao define UX funcional de filtros/list-detail (usar `list-detail-search-and-filters`)
+- covers UI/rendering performance
+- does not cover sensitive data security
+- does not cover full architecture modeling
+- does not define functional UX for filters/list-detail (use `list-detail-search-and-filters`)
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Lista de pedidos trava no scroll."
+Input: "Orders list freezes while scrolling."
 
-Saida esperada:
-- diagnostico do gargalo de render
-- paginacao/virtualizacao e ajuste de bindings
-- melhoria de carregamento de imagem/skeleton
-- comparativo simples antes/depois
+Expected output:
+- diagnosis of the rendering bottleneck
+- pagination/virtualization and binding adjustments
+- image/skeleton loading improvement
+- simple before/after comparison
 
-## Recursos adicionais
+## Additional Resources
 
-- Para checklist de diagnostico e tuning, ler `reference.md`.
+- For diagnosis and tuning checklist, read `reference.md`.

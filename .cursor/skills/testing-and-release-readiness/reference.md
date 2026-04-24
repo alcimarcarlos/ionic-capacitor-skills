@@ -1,21 +1,21 @@
 # Testing and Release Readiness Reference
 
-## Gate de aprovação sugerido
+## Suggested Approval Gate
 
-- Build: `ionic build` concluído
-- Qualidade: lint/testes essenciais sem falha
-- Fluxos críticos: smoke test manual aprovado
-- Plataforma: validação mínima Android/iOS quando houver nativo
+- Build: `ionic build` completed
+- Quality: lint/essential tests without failure
+- Critical flows: manual smoke test approved
+- Platform: minimum Android/iOS validation when native exists
 
-## Matriz de risco
+## Risk Matrix
 
-- **Alto**: quebra de login, pagamento, perda de dados
-- **Médio**: regressão de fluxo secundário, bug com workaround
-- **Baixo**: detalhe visual sem impacto funcional
+- **High**: login breakage, payment, data loss
+- **Medium**: secondary flow regression, bug with workaround
+- **Low**: visual detail without functional impact
 
-## Formato de conclusão
+## Completion Format
 
-1. Status do gate (`go` ou `no-go`)
-2. Evidências executadas
-3. Riscos remanescentes
-4. Próximas ações antes de release
+1. Gate status (`go` or `no-go`)
+2. Executed evidence
+3. Remaining risks
+4. Next actions before release

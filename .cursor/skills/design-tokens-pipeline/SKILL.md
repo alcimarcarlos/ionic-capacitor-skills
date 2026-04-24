@@ -1,67 +1,67 @@
 ---
 name: design-tokens-pipeline
-description: Padroniza pipeline de tokens de design para Ionic Angular, conectando cores, tipografia e espacamento do design aos estilos do app. Use quando alinhar UI com Figma, criar tema ou reduzir inconsistencias visuais.
+description: Standardizes the design token pipeline for Ionic Angular, connecting design colors, typography, and spacing to app styles. Use when aligning UI with Figma, creating a theme, or reducing visual inconsistencies.
 ---
 
 # design-tokens-pipeline
 
-## Objetivo
+## Objective
 
-Criar fluxo consistente de definicao e aplicacao de tokens para acelerar implementacao visual sem divergencias.
+Create a consistent token definition and application flow to speed up visual implementation without divergence.
 
-## Aplicar quando
+## Apply When
 
-- iniciar tema visual do app
-- alinhar telas com design
-- reduzir variacoes de estilo ad hoc
-- criar base para dark mode/brand variants
+- starting the app visual theme
+- aligning screens with design
+- reducing ad hoc style variations
+- creating a base for dark mode/brand variants
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Definir tokens semanticos (nao valores hardcoded no componente).
-- Centralizar tokens em arquivo de tema (`variables.scss` e auxiliares).
-- Separar token global de override por componente quando necessario.
-- Evitar cores/tamanhos diretos em paginas.
-- Definir naming consistente para tokens.
+- Define semantic tokens (not hardcoded values in the component).
+- Centralize tokens in theme files (`variables.scss` and helpers).
+- Separate global tokens from component overrides when needed.
+- Avoid direct colors/sizes in pages.
+- Define consistent token naming.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Levantar tokens principais do design (cor, tipo, espaco, raio).
-2. Nomear tokens semanticos por papel de UI.
-3. Publicar tokens globais no tema do app.
-4. Aplicar tokens nos componentes base.
-5. Validar consistencia e contrastes minimos.
+1. Gather main design tokens (color, type, space, radius).
+2. Name semantic tokens by UI role.
+3. Publish global tokens in the app theme.
+4. Apply tokens in base components.
+5. Validate consistency and minimum contrast.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Copiar valor do Figma direto para cada componente.
-- Criar token duplicado com semantica ambigua.
-- Misturar token de marca com token de papel de interface.
-- Ignorar acessibilidade de contraste ao definir paleta.
+- Copy a Figma value directly into each component.
+- Create duplicate tokens with ambiguous semantics.
+- Mix brand tokens with interface role tokens.
+- Ignore contrast accessibility when defining the palette.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- tema claro/escuro obrigatorio ou opcional
-- variacoes de marca por cliente
-- prioridade de componentes para tokenizacao inicial
-- regra de acessibilidade e contraste alvo
+- required or optional light/dark theme
+- brand variations by client
+- component priority for initial tokenization
+- target accessibility and contrast rule
 
-## Limites desta skill
+## Scope Limits
 
-- cobre pipeline de tema e tokens
-- nao cobre backlog funcional de telas
-- nao cobre contratos de dados e integracao API
+- covers theme and token pipeline
+- does not cover functional screen backlog
+- does not cover data contracts and API integration
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Aplicar identidade visual nas telas de login e home."
+Input: "Apply the visual identity to login and home screens."
 
-Saida esperada:
-- tokens semanticos definidos no tema
-- componentes base usando tokens
-- remocao de estilos hardcoded das telas
-- checklist de consistencia visual e contraste
+Expected output:
+- semantic tokens defined in the theme
+- base components using tokens
+- removal of hardcoded styles from screens
+- visual consistency and contrast checklist
 
-## Recursos adicionais
+## Additional Resources
 
-- Para naming e checklist de adocao progressiva, ler `reference.md`.
+- For naming and progressive adoption checklist, read `reference.md`.

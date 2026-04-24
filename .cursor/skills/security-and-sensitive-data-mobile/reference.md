@@ -1,16 +1,16 @@
 # Security and Sensitive Data Mobile Reference
 
-## Controles minimos
+## Minimum Controls
 
-- classificacao de dados sensiveis
-- armazenamento apropriado por sensibilidade
-- politica de sessao e expiracao
-- logout com limpeza de dados locais
-- mascaramento de dados em logs e UI
+- sensitive data classification
+- appropriate storage by sensitivity
+- session and expiration policy
+- logout with local data cleanup
+- data masking in logs and UI
 
-## Checklist de revisao
+## Review Checklist
 
-1. token/segredo nao exposto em log
-2. dados sensiveis minimizados em cache local
-3. fluxo de sessao expirada com revogacao clara
-4. acao critica com protecao adicional quando exigido
+1. token/secret not exposed in log
+2. sensitive data minimized in local cache
+3. expired session flow with clear revocation
+4. critical action with additional protection when required

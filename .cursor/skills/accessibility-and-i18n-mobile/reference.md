@@ -1,17 +1,17 @@
 # Accessibility and i18n Mobile Reference
 
-## Checklist minimo A11y
+## Minimum A11y Checklist
 
-- contraste de texto e componentes interativos aceitavel
-- foco visivel em elementos navegaveis
-- labels acessiveis para botoes, inputs e icones
-- mensagens de erro claras e associadas ao campo
-- tamanho de toque adequado para acao principal
+- acceptable contrast for text and interactive components
+- visible focus on navigable elements
+- accessible labels for buttons, inputs, and icons
+- clear error messages associated with the field
+- adequate touch target size for the main action
 
-## Checklist minimo i18n
+## Minimum i18n Checklist
 
-- sem texto hardcoded
-- chaves de traducao consistentes
-- pluralizacao tratada
-- fallback para idioma padrao
-- layout validado com strings longas
+- no hardcoded text
+- consistent translation keys
+- pluralization handled
+- fallback to default language
+- layout validated with long strings

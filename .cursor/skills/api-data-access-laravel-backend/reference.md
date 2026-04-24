@@ -1,23 +1,23 @@
 # API Data Access Reference
 
-## Template de saída recomendado
+## Recommended Output Template
 
-1. Contrato do endpoint (método, rota, auth, payload, resposta, erros).
-2. Estrutura de arquivos (`dto`, `service`, `interceptor`).
-3. Código principal tipado.
-4. Estratégia de erro e autenticação.
-5. Checklist de validação.
+1. Endpoint contract (method, route, auth, payload, response, errors).
+2. File structure (`dto`, `service`, `interceptor`).
+3. Main typed code.
+4. Error and authentication strategy.
+5. Validation checklist.
 
-## Convenções
+## Conventions
 
-- DTO de request: `CreateOrderRequestDto`
-- DTO de response: `OrderResponseDto`
-- Service por recurso: `OrdersApiService`
-- Métodos em verbo de negócio: `list`, `getById`, `create`, `cancel`
+- Request DTO: `CreateOrderRequestDto`
+- Response DTO: `OrderResponseDto`
+- Service by resource: `OrdersApiService`
+- Methods using business verbs: `list`, `getById`, `create`, `cancel`
 
-## Erros Laravel comuns
+## Common Laravel Errors
 
-- `401`: sessão/token inválido ou expirado
-- `403`: usuário sem permissão
-- `422`: erro de validação de campos
-- `500`: falha interna do servidor
+- `401`: invalid or expired session/token
+- `403`: user without permission
+- `422`: field validation error
+- `500`: internal server failure

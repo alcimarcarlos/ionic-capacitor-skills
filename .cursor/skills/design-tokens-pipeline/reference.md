@@ -1,6 +1,6 @@
 # Design Tokens Pipeline Reference
 
-## Naming sugerido
+## Suggested Naming
 
 - `--color-bg-primary`
 - `--color-text-primary`
@@ -8,15 +8,15 @@
 - `--space-8/12/16/24`
 - `--radius-sm/md/lg`
 
-## Etapas de adocao
+## Adoption Stages
 
-1. tokens globais
-2. componentes base (button, card, input, header)
-3. telas criticas
-4. telas restantes
+1. global tokens
+2. base components (button, card, input, header)
+3. critical screens
+4. remaining screens
 
-## Checklist minimo
+## Minimum Checklist
 
-- sem valor hardcoded critico em tela
-- tipografia consistente entre titulos e corpo
-- contraste aceitavel em texto e botoes
+- no critical hardcoded value in screen
+- consistent typography between titles and body
+- acceptable contrast in text and buttons

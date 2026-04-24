@@ -1,22 +1,22 @@
 # Forms Validation and Input Masks Reference
 
-## Matriz minima de validacao
+## Minimum Validation Matrix
 
-- Obrigatorio: mensagem simples e direta
-- Formato invalido: explicar formato esperado
-- Tamanho minimo/maximo: informar limite
-- Erro remoto (`422`): mapear para campo ou erro global
+- Required: simple and direct message
+- Invalid format: explain expected format
+- Minimum/maximum length: state the limit
+- Remote error (`422`): map to field or global error
 
-## Padrao de mensagens
+## Message Pattern
 
-- curto, objetivo, sem termo tecnico
-- uma mensagem por campo por vez
-- priorizar erro mais critico primeiro
+- short, objective, no technical term
+- one message per field at a time
+- prioritize the most critical error first
 
-## Checklist de submit
+## Submit Checklist
 
-1. botao desabilitado quando invalido
-2. loading durante envio
-3. evitar duplo envio
-4. sucesso com feedback claro
-5. falha com possibilidade de correcao/reenvio
+1. button disabled when invalid
+2. loading during submission
+3. avoid double submit
+4. success with clear feedback
+5. failure with correction/resubmission path

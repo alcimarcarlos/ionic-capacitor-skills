@@ -1,21 +1,21 @@
 # State and Offline Mobile Reference
 
-## Estratégias de leitura
+## Reading Strategies
 
-- `cache-first`: resposta rápida com atualização posterior
-- `network-first`: prioriza dado fresco com fallback local
-- `stale-while-revalidate`: retorna cache e revalida em paralelo
+- `cache-first`: fast response with later update
+- `network-first`: prioritizes fresh data with local fallback
+- `stale-while-revalidate`: returns cache and revalidates in parallel
 
-## Estratégia de fila offline
+## Offline Queue Strategy
 
-- registrar ação com idempotency key
-- marcar `pending`
-- reenviar em reconexão com retry exponencial
-- marcar `synced` ou `failed` com causa
+- register action with idempotency key
+- mark as `pending`
+- resend on reconnection with exponential retry
+- mark as `synced` or `failed` with cause
 
-## Cenários de teste mínimos
+## Minimum Test Scenarios
 
-- criar dado offline e sincronizar ao reconectar
-- falha temporária de rede com retry automático
-- conflito de versão e regra de resolução aplicada
-- feedback visual correto para `offline/syncing/error/ready`
+- create data offline and sync on reconnect
+- temporary network failure with automatic retry
+- version conflict and applied resolution rule
+- correct visual feedback for `offline/syncing/error/ready`

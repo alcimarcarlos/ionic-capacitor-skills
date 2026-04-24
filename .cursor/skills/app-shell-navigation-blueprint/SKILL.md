@@ -1,67 +1,67 @@
 ---
 name: app-shell-navigation-blueprint
-description: Define estrutura base do app Ionic Angular com shell, fluxos de onboarding/auth/main/settings, guards e navegacao consistente. Use quando iniciar app novo ou reorganizar navegacao principal.
+description: Defines the base Ionic Angular app structure with shell, onboarding/auth/main/settings flows, guards, and consistent navigation. Use when starting a new app or reorganizing main navigation.
 ---
 
 # app-shell-navigation-blueprint
 
-## Objetivo
+## Objective
 
-Garantir base de navegacao consistente para escalar features sem quebrar fluxos principais.
+Ensure a consistent navigation base so features can scale without breaking main flows.
 
-## Aplicar quando
+## Apply When
 
-- iniciar app do zero
-- reorganizar rotas principais
-- criar fluxo onboarding/auth/main
-- configurar tabs, stack e guards
+- starting an app from scratch
+- reorganizing main routes
+- creating onboarding/auth/main flow
+- configuring tabs, stack, and guards
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Definir shell inicial (splash/onboarding/auth/main).
-- Separar claramente areas autenticada e nao autenticada.
-- Aplicar guards para acesso por estado de sessao/perfil.
-- Definir estrategia de retorno e deep link.
-- Incluir tela de configuracoes e saida segura da sessao.
+- Define the initial shell (splash/onboarding/auth/main).
+- Clearly separate authenticated and unauthenticated areas.
+- Apply guards for access by session/profile state.
+- Define return and deep link strategy.
+- Include settings screen and safe session logout.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Mapear jornadas principais do usuario.
-2. Definir arvore de rotas base com lazy loading.
-3. Configurar guards de sessao e permissao.
-4. Configurar navegacao tabs/stack/modals por contexto.
-5. Validar fluxo completo: cold start -> login -> main -> logout.
+1. Map the user's main journeys.
+2. Define the base route tree with lazy loading.
+3. Configure session and permission guards.
+4. Configure tabs/stack/modals navigation by context.
+5. Validate the complete flow: cold start -> login -> main -> logout.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Misturar rotas publicas e privadas sem guard.
-- Navegacao circular sem criterio de retorno.
-- Acoplar decisao de rota em multiplos componentes.
-- Ignorar restauracao de sessao no startup.
+- Mix public and private routes without a guard.
+- Create circular navigation without return criteria.
+- Couple route decisions across multiple components.
+- Ignore session restoration on startup.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- regras de onboarding obrigatorio/opcional
-- politicas de sessao e expiracao
-- papeis/perfis e rotas permitidas
-- comportamento esperado em deep links
+- mandatory/optional onboarding rules
+- session and expiration policies
+- roles/profiles and allowed routes
+- expected behavior in deep links
 
-## Limites desta skill
+## Scope Limits
 
-- cobre arquitetura de navegacao e app shell
-- nao cobre UI detalhada de cada tela
-- nao cobre contratos de API por endpoint
+- covers navigation architecture and app shell
+- does not cover detailed UI for each screen
+- does not cover API contracts by endpoint
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Definir shell com onboarding, login e tabs principais."
+Input: "Define a shell with onboarding, login, and main tabs."
 
-Saida esperada:
-- arvore de rotas base com guards
-- criterio de redirecionamento por sessao
-- estrutura de modulos/features principais
-- checklist de fluxo de navegacao ponta a ponta
+Expected output:
+- base route tree with guards
+- redirect criteria by session
+- main modules/features structure
+- end-to-end navigation flow checklist
 
-## Recursos adicionais
+## Additional Resources
 
-- Para template de rotas e guardas, ler `reference.md`.
+- For route and guard templates, read `reference.md`.

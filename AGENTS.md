@@ -1,89 +1,88 @@
 # Mobile Agent Governance
 
-Você atua como agente técnico para apps mobile híbridos.
+You act as a technical agent for hybrid mobile apps.
 
-## Compatibilidade de agentes
+## Agent Compatibility
 
-Este guia é agnóstico de fornecedor e deve funcionar com Claude, Cursor e Codex.
+This guide is vendor-agnostic and should work with Claude, Cursor, and Codex.
 
-- Trate instruções deste arquivo como prioridade de comportamento.
-- Quando a plataforma não suportar "skills" nativamente, use os `SKILL.md` como playbooks manuais.
-- Mantenha o formato de entrega padrão independentemente do agente.
+- Treat the instructions in this file as behavioral priority.
+- When the platform does not support native "skills", use the `SKILL.md` files as manual playbooks.
+- Keep the standard delivery format regardless of the agent.
 
-## Stack-alvo
+## Target Stack
 
 - Ionic
 - Capacitor
 - Angular
 - TypeScript
-- API Laravel
-- autenticação por token/sessão conforme backend
+- Laravel API
+- token/session authentication according to the backend
 
-## Regras gerais
+## General Rules
 
-- Responder em PT-BR.
-- Gerar código e nomes técnicos em inglês quando fizer sentido técnico.
-- Priorizar arquitetura clara, componentização e previsibilidade.
-- Não inventar contratos de API. Quando não houver contrato explícito, pedir ou inferir com ressalvas.
-- Não colocar regra de negócio complexa dentro de page components.
-- Preferir separação por feature/module.
-- Para integrações nativas, isolar acesso em services/adapters.
-- Sempre considerar diferenças entre web, Android e iOS.
-- Em fluxos de dados, priorizar DTOs/interfaces explícitas.
-- Em telas Ionic, preferir componentes do ecossistema Ionic antes de HTML genérico.
-- Não concluir entregas de tela sem cobrir estados: loading, success, empty, error.
-- Quando faltar contrato de API, declarar suposição explicitamente e marcar ponto de validação.
-- Em features com risco mobile, explicitar diferenças web, Android e iOS na resposta.
-- Incluir teste mínimo por fluxo crítico antes de considerar a tarefa concluída.
+- Reply in English.
+- Generate code and technical names in English when technically appropriate.
+- Prioritize clear architecture, componentization, and predictability.
+- Do not invent API contracts. When there is no explicit contract, ask for it or infer it with caveats.
+- Do not place complex business rules inside page components.
+- Prefer separation by feature/module.
+- For native integrations, isolate access in services/adapters.
+- Always consider differences between web, Android, and iOS.
+- In data flows, prioritize explicit DTOs/interfaces.
+- In Ionic screens, prefer Ionic ecosystem components before generic HTML.
+- Do not consider screen deliveries complete without covering loading, success, empty, and error states.
+- When the API contract is missing, declare the assumption explicitly and mark it as a validation point.
+- In features with mobile risk, explain web, Android, and iOS differences in the response.
+- Include a minimum test for each critical flow before considering the task complete.
 
-## Forma de entrega padrão
+## Standard Delivery Format
 
-Quando gerar uma solução, entregar nesta ordem:
+When generating a solution, deliver in this order:
 
-1. Objetivo
-2. Estrutura de arquivos
-3. Código
-4. Integração com API
-5. Pontos de atenção mobile
-6. Testes e validações
-7. Suposições e pendências de validação
+1. Objective
+2. File structure
+3. Code
+4. API integration
+5. Mobile considerations
+6. Tests and validations
+7. Assumptions and validation pending items
 
-## Prompt base recomendado (multiagente)
+## Recommended Base Prompt (Multi-Agent)
 
-Use este template ao iniciar tarefas em qualquer agente:
+Use this template when starting tasks in any agent:
 
 ```text
-Contexto:
-- Stack: Ionic + Capacitor + Angular + TypeScript + API Laravel
-- Objetivo da tarefa: <descreva>
-- Tela/fluxo: <descreva>
-- Regras de negócio: <descreva>
-- Endpoint/payload: <descreva ou marque suposição>
-- Perfil/permissão: <descreva>
-- Impacto offline/online: <descreva>
+Context:
+- Stack: Ionic + Capacitor + Angular + TypeScript + Laravel API
+- Task objective: <describe>
+- Screen/flow: <describe>
+- Business rules: <describe>
+- Endpoint/payload: <describe or mark as assumption>
+- Role/permission: <describe>
+- Offline/online impact: <describe>
 
-Instruções de entrega:
-- Seguir AGENTS.md e skills relevantes
-- Entregar no formato: Objetivo, Estrutura de arquivos, Código, Integração com API, Pontos mobile, Testes, Suposições
+Delivery instructions:
+- Follow AGENTS.md and relevant skills
+- Deliver in this format: Objective, File structure, Code, API integration, Mobile considerations, Tests, Assumptions
 ```
 
-## Regras específicas do contexto mobile
+## Mobile Context-Specific Rules
 
-- Assuma integração com backend Laravel.
-- Assuma necessidade frequente de autenticação, listagens, filtros.
-- Preferir services para consumo de API.
-- Preferir interceptors para autenticação, headers e tratamento comum de erro.
-- Tratar estados de carregamento, erro, vazio e sucesso nas telas.
-- Quando houver risco de operação offline/intermitente, considerar cache local e estratégia de sincronização.
+- Assume integration with a Laravel backend.
+- Assume frequent need for authentication, listings, and filters.
+- Prefer services for API consumption.
+- Prefer interceptors for authentication, headers, and common error handling.
+- Handle loading, error, empty, and success states in screens.
+- When there is risk of offline/intermittent operation, consider local cache and synchronization strategy.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-Pedir mais contexto quando faltar:
+Ask for more context when any of the following is missing:
 
 - endpoint
 - payload
-- regra de negócio
-- perfis/permissões
-- comportamento offline
-- plugin nativo específico
-
+- business rule
+- roles/permissions
+- offline behavior
+- specific native plugin

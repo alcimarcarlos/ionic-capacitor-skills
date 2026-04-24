@@ -1,68 +1,68 @@
 ---
 name: figma-to-feature-mapping
-description: Converte telas do Figma em backlog tecnico de implementacao Ionic Angular, com features, rotas, componentes, estados e criterios de aceite. Use quando iniciar desenvolvimento a partir de um design ou revisar cobertura funcional de telas.
+description: Converts Figma screens into a technical implementation backlog for Ionic Angular, including features, routes, components, states, and acceptance criteria. Use when starting development from a design or reviewing functional screen coverage.
 ---
 
 # figma-to-feature-mapping
 
-## Objetivo
+## Objective
 
-Transformar frames do Figma em plano de implementacao executavel e rastreavel no app.
+Turn Figma frames into an executable and traceable implementation plan in the app.
 
-## Aplicar quando
+## Apply When
 
-- iniciar feature baseada em Figma
-- quebrar telas em tarefas tecnicas
-- identificar lacunas de estado e comportamento
-- revisar cobertura de navegacao e componentes
+- starting a Figma-based feature
+- breaking screens into technical tasks
+- identifying state and behavior gaps
+- reviewing navigation and component coverage
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Mapear cada frame para rota/fluxo correspondente.
-- Identificar componentes reutilizaveis e componentes de pagina.
-- Listar estados de tela: loading, success, empty, error.
-- Relacionar eventos de usuario com acao tecnica (navegar, enviar, abrir modal).
-- Definir criterio de aceite objetivo por tela.
+- Map each frame to its corresponding route/flow.
+- Identify reusable components and page components.
+- List screen states: loading, success, empty, error.
+- Relate user events to technical actions (navigate, submit, open modal).
+- Define an objective acceptance criterion per screen.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Listar frames e objetivo funcional de cada um.
-2. Agrupar frames por feature/modulo.
-3. Mapear rotas, guardas e transicoes entre telas.
-4. Definir estrutura de arquivos por feature.
-5. Criar backlog tecnico com ordem de implementacao.
-6. Validar dependencias com API, estado e plugins.
+1. List frames and the functional objective of each one.
+2. Group frames by feature/module.
+3. Map routes, guards, and transitions between screens.
+4. Define file structure by feature.
+5. Create a technical backlog with implementation order.
+6. Validate dependencies with API, state, and plugins.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Implementar tela sem mapear estado de erro/vazio.
-- Tratar todo frame como componente novo sem avaliar reuso.
-- Ignorar fluxo de retorno e navegacao entre telas.
-- Criar backlog sem criterio de aceite mensuravel.
+- Implement a screen without mapping error/empty states.
+- Treat every frame as a new component without evaluating reuse.
+- Ignore return flow and navigation between screens.
+- Create a backlog without measurable acceptance criteria.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- frame exato ou conjunto de frames prioritarios
-- comportamento de interacao nao visivel no layout
-- prioridade de release por fluxo
-- regras de permissao/perfil por tela
+- exact frame or set of priority frames
+- interaction behavior not visible in the layout
+- release priority by flow
+- permission/profile rules by screen
 
-## Limites desta skill
+## Scope Limits
 
-- cobre mapeamento de design para backlog tecnico
-- nao substitui modelagem de API (usar `api-data-access-laravel-backend`)
-- nao substitui implementacao visual detalhada (usar `design-system-and-ui-consistency`)
+- covers design-to-technical-backlog mapping
+- does not replace API modeling (use `api-data-access-laravel-backend`)
+- does not replace detailed visual implementation (use `design-system-and-ui-consistency`)
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Mapear onboarding + login + home a partir do Figma."
+Input: "Map onboarding + login + home from Figma."
 
-Saida esperada:
-- rotas e fluxo de navegacao
-- componentes por tela e itens reutilizaveis
-- matriz de estados por tela
-- backlog priorizado com criterios de aceite
+Expected output:
+- routes and navigation flow
+- components by screen and reusable items
+- state matrix by screen
+- prioritized backlog with acceptance criteria
 
-## Recursos adicionais
+## Additional Resources
 
-- Para template de mapeamento e checklist, ler `reference.md`.
+- For mapping template and checklist, read `reference.md`.

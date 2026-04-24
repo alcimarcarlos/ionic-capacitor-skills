@@ -1,68 +1,68 @@
 ---
 name: design-system-and-ui-consistency
-description: Define e aplica consistencia visual em apps Ionic Angular com tokens, componentes base e estados de UI. Use quando implementar telas novas, refatorar interface, alinhar com Figma ou reduzir divergencias de layout.
+description: Defines and applies visual consistency in Ionic Angular apps with tokens, base components, and UI states. Use when implementing new screens, refactoring interfaces, aligning with Figma, or reducing layout divergence.
 ---
 
 # design-system-and-ui-consistency
 
-## Objetivo
+## Objective
 
-Garantir consistencia visual e comportamental entre telas Ionic/Angular com base no design do produto.
+Ensure visual and behavioral consistency across Ionic/Angular screens based on the product design.
 
-## Aplicar quando
+## Apply When
 
-- implementar tela nova baseada em Figma
-- corrigir inconsistencias entre componentes
-- criar componente reutilizavel de UI
-- padronizar estados visuais (loading, empty, error, success)
+- implementing a new Figma-based screen
+- fixing inconsistencies between components
+- creating a reusable UI component
+- standardizing visual states (loading, empty, error, success)
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Consumir tokens ja definidos no tema (nao criar valores hardcoded por tela).
-- Reutilizar componentes base antes de criar variacoes.
-- Aplicar padrao de espacos e hierarquia visual consistente.
-- Garantir estados de UI explicitos para carregamento, vazio e erro.
-- Preferir componentes Ionic para estrutura e interacao mobile.
+- Consume tokens already defined in the theme (do not create hardcoded values per screen).
+- Reuse base components before creating variants.
+- Apply consistent spacing and visual hierarchy patterns.
+- Ensure explicit UI states for loading, empty, and error.
+- Prefer Ionic components for mobile structure and interaction.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Mapear os elementos recorrentes da tela no Figma.
-2. Identificar o que vira token e o que vira componente base.
-3. Implementar/ajustar componente com API simples de props/inputs.
-4. Validar estados visuais e responsividade.
-5. Revisar consistencia com telas ja existentes.
+1. Map recurring screen elements in Figma.
+2. Identify what becomes a token and what becomes a base component.
+3. Implement/adjust the component with a simple props/inputs API.
+4. Validate visual states and responsiveness.
+5. Review consistency with existing screens.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Duplicar estilos inline sem tokenizacao.
-- Criar variante nova para resolver detalhe isolado.
-- Misturar regras de negocio com logica visual no componente.
-- Ignorar estados de erro e vazio por "falta de tempo".
+- Duplicate inline styles without tokenization.
+- Create a new variant to solve an isolated detail.
+- Mix business rules with visual logic inside the component.
+- Ignore error and empty states due to "lack of time".
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- arquivo/frame exato do Figma
-- variacoes esperadas do componente
-- guideline visual ja existente no projeto
-- comportamento em orientacao/tamanho de tela diferente
+- exact Figma file/frame
+- expected component variations
+- existing visual guideline in the project
+- behavior in different orientation/screen sizes
 
-## Limites desta skill
+## Scope Limits
 
-- cobre consistencia visual e composicao de UI
-- nao define pipeline de tokens/tema (usar `design-tokens-pipeline`)
-- nao cobre contratos de API (usar `api-data-access-laravel-backend`)
-- nao cobre integracao nativa de plugin (usar `capacitor-native-integration`)
+- covers visual consistency and UI composition
+- does not define token/theme pipeline (use `design-tokens-pipeline`)
+- does not cover API contracts (use `api-data-access-laravel-backend`)
+- does not cover native plugin integration (use `capacitor-native-integration`)
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Criar card de oferta igual ao Figma e usar em home e detalhe."
+Input: "Create an offer card like Figma and use it in home and detail."
 
-Saida esperada:
-- tokenizacao de espacamento e tipografia
-- `offer-card.component` reutilizavel com variantes
-- estados `loading` e `empty` coerentes
-- checklist visual comparando com o Figma
+Expected output:
+- spacing and typography tokenization
+- reusable `offer-card.component` with variants
+- coherent `loading` and `empty` states
+- visual checklist comparing with Figma
 
-## Recursos adicionais
+## Additional Resources
 
-- Para checklist de consistencia e template de tokens, ler `reference.md`.
+- For consistency checklist and token template, read `reference.md`.

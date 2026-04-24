@@ -1,13 +1,13 @@
 # Mobile Guidelines
 
-## Princípios
+## Principles
 
-- App híbrido com experiência próxima de nativo.
-- UI consistente com Ionic.
-- Camada de integração desacoplada do componente visual.
-- Preparado para diferentes domínios de negócio e rotinas operacionais.
+- Hybrid app with a near-native experience.
+- UI consistent with Ionic.
+- Integration layer decoupled from the visual component.
+- Prepared for different business domains and operational routines.
 
-## Estrutura sugerida
+## Suggested Structure
 
 ```text
 src/app/
@@ -30,26 +30,25 @@ src/app/
     utils/
 ```
 
-## Padrões
+## Patterns
 
-- `core/` para infraestrutura transversal
-- `features/` por domínio de negócio
-- `shared/` para reutilização
-- services sem lógica de UI
-- pages enxutas
-- componentes reaproveitáveis
+- `core/` for cross-cutting infrastructure
+- `features/` by business domain
+- `shared/` for reuse
+- services without UI logic
+- lean pages
+- reusable components
 
-## Backend Laravel
+## Laravel Backend
 
-- trabalhar com DTOs/interfaces
-- mapear payloads explicitamente
-- evitar acoplamento direto do componente à resposta bruta da API
-- tratar paginação, filtros, autenticação e erros de domínio
+- work with DTOs/interfaces
+- map payloads explicitly
+- avoid directly coupling the component to the raw API response
+- handle pagination, filters, authentication, and domain errors
 
 ## Capacitor
 
-- encapsular plugins em adapters/services
-- tratar permissões
-- tratar diferenças web/native
-- usar `NgZone` quando eventos nativos não refletirem na UI
-
+- encapsulate plugins in adapters/services
+- handle permissions
+- handle web/native differences
+- use `NgZone` when native events do not reflect in the UI

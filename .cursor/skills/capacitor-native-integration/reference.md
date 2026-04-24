@@ -1,22 +1,22 @@
 # Capacitor Native Integration Reference
 
-## Sequência padrão de integração
+## Standard Integration Sequence
 
-1. Verificar disponibilidade do plugin/plataforma.
-2. Checar permissão atual.
-3. Solicitar permissão quando necessário.
-4. Executar ação nativa.
-5. Tratar erro e fallback web.
+1. Verify plugin/platform availability.
+2. Check current permission.
+3. Request permission when needed.
+4. Execute native action.
+5. Handle error and web fallback.
 
-## Estados de permissão sugeridos
+## Suggested Permission States
 
 - `granted`
 - `denied`
 - `prompt`
-- `limited` (quando aplicável)
+- `limited` (when applicable)
 
-## Checklist mínimo por plataforma
+## Minimum Platform Checklist
 
-- Android: permissão inicial, recusa, recusa permanente
-- iOS: permissão inicial, recusa, retorno de background
-- Web: fallback funcional ou mensagem explícita de indisponibilidade
+- Android: initial permission, denial, permanent denial
+- iOS: initial permission, denial, background return
+- Web: functional fallback or explicit unavailable message

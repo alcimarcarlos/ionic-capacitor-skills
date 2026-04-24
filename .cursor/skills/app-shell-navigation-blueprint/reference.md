@@ -1,6 +1,6 @@
 # App Shell Navigation Blueprint Reference
 
-## Blocos de rota sugeridos
+## Suggested Route Blocks
 
 - `onboarding/*`
 - `auth/*`
@@ -8,10 +8,10 @@
 - `settings/*`
 - `fallback/not-found`
 
-## Checklist de navegacao
+## Navigation Checklist
 
-1. cold start sem sessao -> onboarding/auth
-2. cold start com sessao valida -> app
-3. sessao expirada -> redireciona auth
-4. logout limpa estado sensivel
-5. retorno de detalhe preserva contexto da lista
+1. cold start without session -> onboarding/auth
+2. cold start with valid session -> app
+3. expired session -> redirect to auth
+4. logout clears sensitive state
+5. returning from detail preserves list context

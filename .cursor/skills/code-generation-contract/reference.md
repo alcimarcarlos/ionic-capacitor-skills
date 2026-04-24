@@ -1,14 +1,14 @@
 # Code Generation Contract Reference
 
-## Gate de conformidade
+## Compliance Gate
 
-- objetivo da feature claro
-- estrutura de arquivos definida
-- contratos de dados definidos/supostos
-- estados de tela cobertos
-- riscos mobile declarados
-- teste minimo definido
+- clear feature objective
+- defined file structure
+- defined/assumed data contracts
+- covered screen states
+- declared mobile risks
+- defined minimum test
 
-## Regra de conclusao
+## Completion Rule
 
-Uma tarefa so pode ser considerada concluida quando todos os itens do gate estiverem presentes na resposta.
+A task can only be considered complete when all gate items are present in the response.

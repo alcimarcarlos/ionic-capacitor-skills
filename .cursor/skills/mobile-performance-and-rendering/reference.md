@@ -1,17 +1,17 @@
 # Mobile Performance and Rendering Reference
 
-## Checklist de diagnostico
+## Diagnosis Checklist
 
-- tempo de abertura da tela
-- fluidez de scroll em listas longas
-- custo de render em componentes repetidos
-- volume de imagem/midia carregada
-- comportamento em device intermediario
+- screen opening time
+- scroll smoothness in long lists
+- render cost in repeated components
+- loaded image/media volume
+- behavior on mid-range device
 
-## Checklist de otimizacao
+## Optimization Checklist
 
-- reduzir itens renderizados por vez
-- aplicar carregamento incremental
-- remover bindings/calculos pesados no template
-- usar feedback visual (skeleton) em carregamento
-- validar ganho antes/depois
+- reduce items rendered at once
+- apply incremental loading
+- remove heavy bindings/calculations from template
+- use visual feedback (skeleton) while loading
+- validate gain before/after

@@ -1,6 +1,6 @@
 # Ionic Angular Architecture Reference
 
-## Estrutura sugerida por feature
+## Suggested Structure by Feature
 
 `features/<feature-name>/`
 
@@ -10,16 +10,16 @@
 - `models/`
 - `<feature-name>.routes.ts`
 
-## Responsabilidades
+## Responsibilities
 
-- `page`: orquestra UI e eventos de tela
-- `component`: bloco reutilizável de interface
-- `service/facade`: regra de negócio e integração
-- `model`: contratos de dados da feature
+- `page`: orchestrates UI and screen events
+- `component`: reusable interface block
+- `service/facade`: business rule and integration
+- `model`: feature data contracts
 
-## Checklist rápido de arquitetura
+## Quick Architecture Checklist
 
-- page sem regra de negócio complexa
-- rotas com lazy loading quando aplicável
-- estado de loading/erro/vazio mapeado
-- acoplamento mínimo entre feature e API bruta
+- page without complex business rules
+- routes with lazy loading when applicable
+- loading/error/empty state mapped
+- minimum coupling between feature and raw API

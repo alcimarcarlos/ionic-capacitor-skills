@@ -1,68 +1,68 @@
 ---
 name: accessibility-and-i18n-mobile
-description: Garante acessibilidade e internacionalizacao em apps Ionic Angular, cobrindo contraste, foco, semantica, leitor de tela e textos localizados. Use quando implementar ou revisar telas para qualidade de UX inclusiva e suporte multilíngue.
+description: Ensures accessibility and internationalization in Ionic Angular apps, covering contrast, focus, semantics, screen readers, and localized text. Use when implementing or reviewing screens for inclusive UX quality and multilingual support.
 ---
 
 # accessibility-and-i18n-mobile
 
-## Objetivo
+## Objective
 
-Garantir que telas sejam acessiveis e internacionalizaveis desde a implementacao inicial.
+Ensure screens are accessible and internationalizable from the initial implementation.
 
-## Aplicar quando
+## Apply When
 
-- criar/refatorar telas e componentes
-- revisar experiencia de formulario e navegacao
-- adicionar novos idiomas ou ajustar textos
-- preparar feature para producao com padrao de qualidade
+- creating/refactoring screens and components
+- reviewing form and navigation experience
+- adding new languages or adjusting copy
+- preparing a feature for production with a quality standard
 
-## Requisitos obrigatorios
+## Mandatory Requirements
 
-- Garantir contraste minimo entre texto e fundo.
-- Definir labels acessiveis em botoes, inputs e icones interativos.
-- Preservar ordem de foco e navegacao por teclado quando aplicavel.
-- Externalizar textos para camada de i18n (sem hardcode em template).
-- Tratar pluralizacao e fallback de traducao.
+- Ensure minimum contrast between text and background.
+- Define accessible labels on buttons, inputs, and interactive icons.
+- Preserve focus order and keyboard navigation when applicable.
+- Externalize text to the i18n layer (no hardcoding in templates).
+- Handle pluralization and translation fallback.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Mapear elementos interativos da tela.
-2. Definir semantica e labels acessiveis.
-3. Aplicar i18n em todos os textos visiveis.
-4. Validar truncamento/overflow para strings longas.
-5. Executar checklist de acessibilidade e localizacao.
+1. Map the screen's interactive elements.
+2. Define semantics and accessible labels.
+3. Apply i18n to all visible text.
+4. Validate truncation/overflow for long strings.
+5. Run the accessibility and localization checklist.
 
-## Anti-padroes (nao fazer)
+## Anti-Patterns (Do Not Do)
 
-- Usar apenas cor para indicar erro/sucesso.
-- Renderizar icone clicavel sem label acessivel.
-- Deixar texto hardcoded no HTML/TS.
-- Assumir tamanho fixo de string em todos os idiomas.
+- Use color alone to indicate error/success.
+- Render a clickable icon without an accessible label.
+- Leave hardcoded text in HTML/TS.
+- Assume fixed string length across all languages.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- idiomas alvo e prioridade de rollout
-- padrao de i18n adotado no projeto
-- requisitos de acessibilidade do produto
-- componentes com maior criticidade de uso
+- target languages and rollout priority
+- i18n pattern adopted in the project
+- product accessibility requirements
+- components with higher usage criticality
 
-## Limites desta skill
+## Scope Limits
 
-- cobre acessibilidade e localizacao da interface
-- nao cobre integracao API/DTO
-- nao cobre otimizacao de performance profunda
-- nao substitui regras de validacao de formulario (usar `forms-validation-and-input-masks`)
+- covers interface accessibility and localization
+- does not cover API/DTO integration
+- does not cover deep performance optimization
+- does not replace form validation rules (use `forms-validation-and-input-masks`)
 
-## Exemplo rapido (entrada -> saida)
+## Quick Example (Input -> Output)
 
-Entrada: "Validar tela de login para acessibilidade e pt/en."
+Input: "Validate the login screen for accessibility and pt/en."
 
-Saida esperada:
-- labels acessiveis em campos e botoes
-- mensagens de erro localizadas
-- ajuste de contraste e foco visivel
-- checklist de validacao a11y + i18n
+Expected output:
+- accessible labels in fields and buttons
+- localized error messages
+- contrast adjustment and visible focus
+- a11y + i18n validation checklist
 
-## Recursos adicionais
+## Additional Resources
 
-- Para checklist e criterios de validacao, ler `reference.md`.
+- For checklist and validation criteria, read `reference.md`.

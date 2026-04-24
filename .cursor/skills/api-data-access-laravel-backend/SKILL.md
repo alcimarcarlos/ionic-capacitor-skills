@@ -1,79 +1,78 @@
 ---
 name: api-data-access-laravel-backend
-description: Padroniza integração Ionic/Angular com APIs Laravel, incluindo services HTTP, DTOs, interceptors, autenticação e tratamento de erro. Use quando houver consumo de endpoints, contratos de request/response, paginação, filtros ou fluxo de auth no backend Laravel.
+description: Standardizes Ionic/Angular integration with Laravel APIs, including HTTP services, DTOs, interceptors, authentication, and error handling. Use when consuming endpoints, request/response contracts, pagination, filters, or auth flows in the Laravel backend.
 ---
 
 # api-data-access-laravel-backend
 
-## Objetivo
+## Objective
 
-Padronizar a camada de dados do app Ionic/Angular para integração confiável com APIs Laravel.
+Standardize the Ionic/Angular app data layer for reliable integration with Laravel APIs.
 
-## Aplicar quando
+## Apply When
 
-- consumir/criar endpoint REST
-- modelar request/response DTO
-- implementar autenticação por token/sessão
-- configurar interceptor (auth, headers, erro global)
-- tratar paginação, filtros, ordenação e mensagens de erro
+- consuming/creating a REST endpoint
+- modeling request/response DTOs
+- implementing token/session authentication
+- configuring an interceptor (auth, headers, global error)
+- handling pagination, filters, sorting, and error messages
 
-## Requisitos obrigatórios
+## Mandatory Requirements
 
-- Definir DTOs e tipos explícitos para request e response.
-- Separar `ApiService` por recurso/domínio (ex.: `AuthApiService`, `OrdersApiService`).
-- Centralizar comportamento comum em interceptor (Authorization, refresh, tratamento de `401/403/422/500`).
-- Não executar `HttpClient` direto em page/component.
-- Tratar estado de loading, erro e vazio no consumidor.
+- Define explicit DTOs and types for request and response.
+- Separate `ApiService` by resource/domain (for example: `AuthApiService`, `OrdersApiService`).
+- Centralize common behavior in an interceptor (Authorization, refresh, handling `401/403/422/500`).
+- Do not execute `HttpClient` directly in a page/component.
+- Handle loading, error, and empty states in the consumer.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Confirmar contrato do endpoint (método, rota, payload, headers, resposta e códigos de erro).
-2. Criar DTOs (`RequestDto`, `ResponseDto`) e mapear para model de UI quando necessário.
-3. Implementar service com métodos curtos e tipados.
-4. Aplicar interceptor para autenticação e tratamento de erro comum.
-5. Definir estratégia de paginação/filtro e normalização da resposta Laravel.
-6. Validar cenários de sucesso, validação (`422`), não autenticado (`401`) e indisponibilidade.
+1. Confirm the endpoint contract (method, route, payload, headers, response, and error codes).
+2. Create DTOs (`RequestDto`, `ResponseDto`) and map to a UI model when needed.
+3. Implement a service with short, typed methods.
+4. Apply an interceptor for authentication and common error handling.
+5. Define pagination/filter strategy and Laravel response normalization.
+6. Validate success, validation (`422`), unauthenticated (`401`), and unavailable scenarios.
 
-## Anti-padrões (não fazer)
+## Anti-Patterns (Do Not Do)
 
-- Acoplar tela ao payload bruto da API.
-- Repetir header/token em todos os métodos manualmente.
-- Usar `any` em payload/resposta sem justificativa.
-- Silenciar erro sem retornar contexto útil para UI.
+- Couple the screen to the raw API payload.
+- Repeat header/token logic manually in every method.
+- Use `any` in payload/response without justification.
+- Silence errors without returning useful context to the UI.
 
-## Formato de entrega esperado
+## Expected Delivery Format
 
-1. Contrato inferido/confirmado do endpoint.
-2. Estrutura de arquivos sugerida.
-3. Código de DTOs + service + interceptor (se aplicável).
-4. Estratégia de tratamento de erro e autenticação.
-5. Checklist rápido de validação.
+1. Inferred/confirmed endpoint contract.
+2. Suggested file structure.
+3. DTO + service + interceptor code (if applicable).
+4. Error handling and authentication strategy.
+5. Quick validation checklist.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- endpoint exato e método HTTP
-- payload de request/response real
-- formato de autenticação (Bearer, cookie/sessão, refresh token)
-- regras de paginação/filtro/ordenação
-- mensagens/códigos de erro esperados pelo backend
+- exact endpoint and HTTP method
+- real request/response payload
+- authentication format (Bearer, cookie/session, refresh token)
+- pagination/filter/sorting rules
+- error messages/codes expected from the backend
 
-## Limites desta skill
+## Scope Limits
 
-- cobre integração HTTP e contratos de dados
-- não cobre plugin nativo/permissão de dispositivo (usar `capacitor-native-integration`)
-- não define arquitetura completa de page/feature (usar `ionic-angular-architecture`)
+- covers HTTP integration and data contracts
+- does not cover native plugin/device permission (use `capacitor-native-integration`)
+- does not define full page/feature architecture (use `ionic-angular-architecture`)
 
-## Exemplo rápido (entrada -> saída)
+## Quick Example (Input -> Output)
 
-Entrada: "Criar consumo de `GET /api/orders?page=1` com token e paginação."
+Input: "Create consumption for `GET /api/orders?page=1` with token and pagination."
 
-Saída esperada:
-- `orders.dto.ts` com `OrderItemDto` e `PaginatedResponseDto<OrderItemDto>`
-- `orders-api.service.ts` com `list(params)` tipado
-- interceptor com `Authorization` e tratamento de `401/422`
-- checklist: sucesso, lista vazia, token expirado, erro de validação
+Expected output:
+- `orders.dto.ts` with `OrderItemDto` and `PaginatedResponseDto<OrderItemDto>`
+- `orders-api.service.ts` with typed `list(params)`
+- interceptor with `Authorization` and `401/422` handling
+- checklist: success, empty list, expired token, validation error
 
-## Recursos adicionais
+## Additional Resources
 
-- Para templates e convenções detalhadas, ler `reference.md`.
-
+- For detailed templates and conventions, read `reference.md`.

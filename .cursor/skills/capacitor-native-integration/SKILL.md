@@ -1,79 +1,78 @@
 ---
 name: capacitor-native-integration
-description: Implementa integrações nativas com Capacitor de forma segura e multiplataforma, cobrindo plugins, permissões, lifecycle e fallback web. Use quando houver câmera, arquivos, notificações, biometria, network ou qualquer API nativa.
+description: Implements native integrations with Capacitor in a safe, cross-platform way, covering plugins, permissions, lifecycle, and web fallback. Use when there is camera, files, notifications, biometrics, network, or any native API.
 ---
 
 # capacitor-native-integration
 
-## Objetivo
+## Objective
 
-Garantir integração nativa organizada, resiliente e compatível entre web, Android e iOS.
+Ensure organized, resilient native integration compatible across web, Android, and iOS.
 
-## Aplicar quando
+## Apply When
 
-- usar plugin Capacitor
-- lidar com permissões
-- criar bridge nativa
-- tratar eventos de lifecycle
-- sincronizar comportamento web/mobile
+- using a Capacitor plugin
+- handling permissions
+- creating a native bridge
+- handling lifecycle events
+- synchronizing web/mobile behavior
 
-## Requisitos obrigatórios
+## Mandatory Requirements
 
-- Isolar cada plugin em service/adapter dedicado.
-- Definir interface de domínio para reduzir acoplamento com API do plugin.
-- Tratar permissões de forma explícita (pré-check, request e recusa).
-- Incluir fallback para web quando a funcionalidade permitir.
-- Considerar `NgZone` ao atualizar UI a partir de callback nativo.
-- Tratar ciclo de vida (`App.addListener`) quando o fluxo depender de foreground/background.
+- Isolate each plugin in a dedicated service/adapter.
+- Define a domain interface to reduce coupling with the plugin API.
+- Handle permissions explicitly (pre-check, request, and denial).
+- Include a web fallback when the functionality allows it.
+- Consider `NgZone` when updating UI from a native callback.
+- Handle lifecycle (`App.addListener`) when the flow depends on foreground/background.
 
-## Fluxo recomendado
+## Recommended Flow
 
-1. Validar plugin e versões compatíveis com plataforma alvo.
-2. Definir adapter com métodos de alto nível para o domínio.
-3. Implementar guardas de plataforma (`Capacitor.isNativePlatform()`).
-4. Implementar fluxo de permissão com estados claros.
-5. Tratar exceções nativas e converter para erros de domínio.
-6. Validar comportamento em web + Android + iOS.
+1. Validate plugin and versions compatible with the target platform.
+2. Define an adapter with high-level domain methods.
+3. Implement platform guards (`Capacitor.isNativePlatform()`).
+4. Implement permission flow with clear states.
+5. Handle native exceptions and convert them into domain errors.
+6. Validate behavior on web + Android + iOS.
 
-## Anti-padrões (não fazer)
+## Anti-Patterns (Do Not Do)
 
-- Chamar plugin direto no componente de tela.
-- Assumir que plugin disponível na web sem fallback.
-- Ignorar estado de permissão negada/permanente.
-- Atualizar estado de UI sem considerar contexto de zona Angular.
+- Call the plugin directly from the screen component.
+- Assume the plugin is available on web without a fallback.
+- Ignore denied/permanently denied permission state.
+- Update UI state without considering Angular zone context.
 
-## Formato de entrega esperado
+## Expected Delivery Format
 
-1. Adapter/service nativo com interface de uso.
-2. Fluxo de permissão e fallback web.
-3. Observações por plataforma (Android/iOS/web).
-4. Checklist de validação manual em dispositivo.
+1. Native adapter/service with usage interface.
+2. Permission flow and web fallback.
+3. Platform notes (Android/iOS/web).
+4. Manual device validation checklist.
 
-## Quando pedir mais contexto
+## When to Ask for More Context
 
-- plugin exato e versão alvo
-- plataformas alvo (Android, iOS, web)
-- comportamento esperado quando permissão é negada
-- necessidade de operar offline/foreground/background
-- requisitos de UX (mensagem, retry, bloqueio de ação)
+- exact plugin and target version
+- target platforms (Android, iOS, web)
+- expected behavior when permission is denied
+- need to operate offline/foreground/background
+- UX requirements (message, retry, action blocking)
 
-## Limites desta skill
+## Scope Limits
 
-- cobre integração com APIs nativas e permissões
-- não cobre modelagem de DTO/contratos HTTP (usar `api-data-access-laravel-backend`)
-- não cobre estratégia ampla de estado/sync offline (usar `state-and-offline-mobile`)
+- covers native APIs and permissions integration
+- does not cover DTO/HTTP contract modeling (use `api-data-access-laravel-backend`)
+- does not cover broad offline state/sync strategy (use `state-and-offline-mobile`)
 
-## Exemplo rápido (entrada -> saída)
+## Quick Example (Input -> Output)
 
-Entrada: "Integrar câmera com fallback web e tratar permissão negada."
+Input: "Integrate camera with web fallback and handle denied permission."
 
-Saída esperada:
-- `camera.adapter.ts` com `takePhoto()` e `isAvailable()`
-- fluxo explícito: check permission -> request -> denied/permanent denied
-- fallback web com `<input type="file">` ou mensagem de indisponibilidade
-- checklist Android/iOS/web validando sucesso, recusa e cancelamento
+Expected output:
+- `camera.adapter.ts` with `takePhoto()` and `isAvailable()`
+- explicit flow: check permission -> request -> denied/permanent denied
+- web fallback with `<input type="file">` or unavailable message
+- Android/iOS/web checklist validating success, denial, and cancellation
 
-## Recursos adicionais
+## Additional Resources
 
-- Para guia de permissões e lifecycle, ler `reference.md`.
-
+- For permissions and lifecycle guide, read `reference.md`.
