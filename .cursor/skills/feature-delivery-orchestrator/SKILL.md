@@ -9,6 +9,12 @@ description: Orchestrates end-to-end mobile feature delivery, from Figma to rele
 
 Ensure a single, predictable flow for delivering complete features in Ionic/Capacitor/Angular.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic orchestration: it’s a sequencing + quality gate playbook.
+- Each phase should produce **explicit artifacts** (file tree, DTOs, routes, state matrix, checklists) that can be reviewed without trusting the assistant.
+- When design/contract is missing, proceed with **assumptions** + validation items; do not silently invent.
+
 ## Apply When
 
 - implementing a new feature end to end
@@ -22,6 +28,12 @@ Ensure a single, predictable flow for delivering complete features in Ionic/Capa
 - Declare assumptions when contract/rule is missing.
 - Cover screen states and mobile risks.
 - Deliver a final go/no-go checklist.
+
+## Cross-Cutting Gates (Always Apply)
+
+- **Clean boundaries**: pages thin, business logic in services/use-cases, API boundary via DTOs.
+- **Security**: session/token handling reviewed, sensitive data redaction, logout cleanup defined.
+- **Performance**: large lists/media considered, avoid “load all”, measure/verify improvements.
 
 ## Mandatory Orchestration Sequence
 

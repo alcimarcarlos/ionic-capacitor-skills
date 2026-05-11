@@ -9,6 +9,12 @@ description: Generates a mandatory state matrix per screen for Ionic Angular app
 
 Avoid incomplete screens by ensuring coverage of interface states and transitions.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic completeness tool: produce a matrix that can be reviewed independently of the assistant.
+- Keep states and transitions **explicit** (entry criteria, UI representation, recovery actions).
+- If offline/auth behavior is unknown, make assumptions explicit and list validation steps.
+
 ## Apply When
 
 - creating a new screen
@@ -23,6 +29,15 @@ Avoid incomplete screens by ensuring coverage of interface states and transition
 - Define the event that leads to each state.
 - Define the recovery action (retry, refresh, login, support).
 - Ensure each state has a clear visual representation.
+
+## Structured State Output (Recommended Shape)
+
+- **State**: name and meaning.
+- **Entry criteria**: what must be true to enter it.
+- **UI**: what the user sees (component/block).
+- **Actions**: primary and secondary actions.
+- **Recovery**: retry/login/offline guidance.
+- **Telemetry** (optional): what to log (redacted) for diagnosis.
 
 ## Recommended Flow
 

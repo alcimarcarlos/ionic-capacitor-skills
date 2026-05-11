@@ -9,6 +9,12 @@ description: Defines and applies visual consistency in Ionic Angular apps with t
 
 Ensure visual and behavioral consistency across Ionic/Angular screens based on the product design.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic consistency checklist: tokens + base components + states.
+- If design tokens/components are not present in the repo, propose a minimal set and mark as an assumption.
+- Prefer changes that reduce long-term divergence (reuse > new variants).
+
 ## Apply When
 
 - implementing a new Figma-based screen
@@ -23,6 +29,12 @@ Ensure visual and behavioral consistency across Ionic/Angular screens based on t
 - Apply consistent spacing and visual hierarchy patterns.
 - Ensure explicit UI states for loading, empty, and error.
 - Prefer Ionic components for mobile structure and interaction.
+
+## Clean UI Architecture Baseline
+
+- Keep UI components focused on **presentation**; pass formatted view models and callbacks from containers/facades.
+- Avoid duplicating CSS and layout patterns; prefer shared tokens/components.
+- Make loading/empty/error states **first-class** components/patterns to avoid per-screen drift.
 
 ## Recommended Flow
 

@@ -9,6 +9,12 @@ description: Converts Figma screens into a technical implementation backlog for 
 
 Turn Figma frames into an executable and traceable implementation plan in the app.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic planning playbook: output should be reviewable without relying on any specific assistant.
+- Prefer **structured artifacts**: route map, file tree, state matrix, and acceptance criteria.
+- If Figma interaction rules are ambiguous, capture them as explicit questions/assumptions with validation steps.
+
 ## Apply When
 
 - starting a Figma-based feature
@@ -23,6 +29,12 @@ Turn Figma frames into an executable and traceable implementation plan in the ap
 - List screen states: loading, success, empty, error.
 - Relate user events to technical actions (navigate, submit, open modal).
 - Define an objective acceptance criterion per screen.
+
+## Clean Architecture Baseline (Planning Stage)
+
+- Plan feature boundaries by **cohesion** (screens + services + models that change together).
+- Identify boundary contracts early (DTOs, route params, storage/offline needs).
+- Avoid mixing business rules into pages in the plan; allocate them to services/use-cases.
 
 ## Recommended Flow
 

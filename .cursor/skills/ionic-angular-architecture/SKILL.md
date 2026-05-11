@@ -9,6 +9,12 @@ description: Organizes Ionic Angular architecture by feature with lean pages, re
 
 Define an Ionic + Angular app structure with strong separation of responsibilities.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- This skill is **agent-vendor agnostic**. Follow it as an architecture checklist, not as a tool-specific workflow.
+- When project conventions are unknown, propose a structure and label it as an **assumption** to be validated against the repo.
+- Prefer **predictable module boundaries** and explicit dependencies over implicit “shared” coupling.
+
 ## Apply When
 
 - creating a new feature
@@ -25,6 +31,18 @@ Define an Ionic + Angular app structure with strong separation of responsibiliti
 - Prefer Ionic components for visual structure and mobile UX.
 - Separate API model from presentation model.
 - Define routes with lazy loading and guards when needed.
+
+## Structured Logic + Clean Boundaries
+
+- UI layer: events/state binding only (no business rules, no direct HTTP).
+- Domain/use-case layer: pure(ish) functions where possible, explicit inputs/outputs, unit-test friendly.
+- Data layer: DTOs, mapping, caching/retries, and error normalization.
+- Cross-cutting concerns: interceptors/guards/adapters (auth, logging, permissions, platform).
+
+## Security + Performance Baseline
+
+- **Security**: least privilege for permissions/guards; never leak sensitive data in UI logs; protect critical routes/actions.
+- **Performance**: avoid over-rendering; use `OnPush` where appropriate; `trackBy` for lists; lazy-load feature routes/modules.
 
 ## Recommended Flow
 

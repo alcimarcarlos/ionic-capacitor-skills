@@ -9,6 +9,12 @@ description: Defines the base Ionic Angular app structure with shell, onboarding
 
 Ensure a consistent navigation base so features can scale without breaking main flows.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic navigation architecture checklist.
+- Prefer explicit route trees, guard rules, and redirects that can be reviewed without running special tools.
+- If auth/session rules are unknown, declare assumptions and list validation steps.
+
 ## Apply When
 
 - starting an app from scratch
@@ -23,6 +29,12 @@ Ensure a consistent navigation base so features can scale without breaking main 
 - Apply guards for access by session/profile state.
 - Define return and deep link strategy.
 - Include settings screen and safe session logout.
+
+## Security + Resilience Baseline
+
+- **Guards**: do not rely on UI hiding; enforce access by route guards.
+- **Session restore**: handle cold start with persisted session safely; avoid infinite redirect loops.
+- **Logout**: clear session + sensitive cached state and return to a safe public route.
 
 ## Recommended Flow
 

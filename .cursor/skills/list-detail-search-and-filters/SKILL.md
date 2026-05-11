@@ -9,6 +9,12 @@ description: Structures list and detail flows with search, filters, sorting, and
 
 Standardize list-detail experiences with performance, predictable state, and good search/filter UX.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic list/detail playbook: explicit query contract, state model, and pagination rules.
+- If backend pagination style is unknown, propose page-based vs cursor-based as an assumption and list validation steps.
+- Prefer implementations that prevent duplicated requests and inconsistent merges.
+
 ## Apply When
 
 - creating a list screen with detail item
@@ -23,6 +29,12 @@ Standardize list-detail experiences with performance, predictable state, and goo
 - Filters with controlled state and predictable reset.
 - Coherent pagination (cursor or page-based) with safe append.
 - List -> detail navigation without losing context when returning.
+
+## Performance + Correctness Baseline
+
+- **Requests**: cancel/ignore stale requests; avoid parallel fetches for the same query; cache the last successful result when appropriate.
+- **Pagination merge**: de-duplicate by stable id; handle “end reached” deterministically.
+- **Rendering**: use `trackBy`; avoid heavy template expressions; prefer skeletons for perceived performance.
 
 ## Recommended Flow
 

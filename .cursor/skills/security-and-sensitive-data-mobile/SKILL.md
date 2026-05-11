@@ -9,6 +9,12 @@ description: Defines security practices for sensitive data in Ionic Capacitor ap
 
 Reduce data exposure risk and strengthen session controls in the mobile app.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic security checklist: applies regardless of the coding assistant.
+- If policies/compliance requirements are unknown, proceed with a **baseline** and mark deltas as validation items.
+- Prefer controls that are **auditable** (clear where data lives, how it expires, and how it is cleared).
+
 ## Apply When
 
 - implementing login/session/token
@@ -24,6 +30,16 @@ Reduce data exposure risk and strengthen session controls in the mobile app.
 - Define a session cleanup policy on logout.
 - Protect critical actions with an additional layer when required.
 
+## Structured Security Model (Baseline)
+
+- **Data classification**: Public / Internal / Sensitive / Secret.
+- **Storage rules**:
+  - Secrets/tokens: secure storage only (or short-lived memory) + explicit expiry.
+  - PII: minimize, encrypt at rest when stored, and avoid full display by default.
+  - Cached API responses: time-bound, clearable, and scoped per user/session.
+- **Error/logging rules**: redact tokens, Authorization headers, and PII in errors, analytics, and console output.
+- **Session rules**: explicit logout cleanup, unauthorized handling, and “stale session” recovery.
+
 ## Recommended Flow
 
 1. Classify data by sensitivity level.
@@ -38,6 +54,13 @@ Reduce data exposure risk and strengthen session controls in the mobile app.
 - Display complete sensitive data on screen/log.
 - Keep session active without expiration control.
 - Handle auth failure without revocation/cleanup action.
+
+## Minimum Validation Checklist (Practical)
+
+- Logout clears sensitive local state (storage + in-memory caches).
+- `401` leads to safe cleanup + user re-authentication flow (no infinite loops).
+- No logs/analytics contain Authorization headers, tokens, or full PII payloads.
+- Sensitive UI surfaces have masking/redaction where appropriate (e.g., partial email/document).
 
 ## When to Ask for More Context
 

@@ -9,6 +9,13 @@ description: Enforces a mandatory output contract for Ionic Angular code generat
 
 Standardize the format and minimum completeness level of agent deliveries.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- This skill is **agent-vendor agnostic**: treat it as a playbook that any coding assistant can follow.
+- Prefer **deterministic, step-by-step** deliveries over conversational or “hand-wavy” guidance.
+- Do not rely on vendor-specific features (special tooling, hidden memory, proprietary commands) to be “complete”.
+- If key inputs are missing, proceed with **explicit assumptions** and mark them as validation items (do not invent contracts silently).
+
 ## Apply When
 
 - generating a new screen/feature
@@ -24,6 +31,18 @@ Standardize the format and minimum completeness level of agent deliveries.
 - Include mobile considerations (web/Android/iOS).
 - Include minimum test checklist per critical flow.
 
+## Clean Architecture + Structured Logic Baseline
+
+- Keep page/components **thin**: UI binding + orchestration only.
+- Place business rules in **services/facades/use-cases** with typed inputs/outputs.
+- Use **DTOs** at the boundary; map to UI models where it reduces coupling.
+- Treat error handling as **structured outcomes** (typed error objects/enums), not ad-hoc strings.
+
+## Security + Performance Baseline (Always Check)
+
+- **Security**: never log/store secrets; redact tokens/PII; least-privilege permissions; handle `401/403/422` explicitly; clear session on logout.
+- **Performance**: avoid repeated heavy bindings; prefer `trackBy` for lists; debounce expensive inputs; paginate/virtualize when list size can grow.
+
 ## Mandatory Output Format
 
 1. Objective
@@ -33,6 +52,13 @@ Standardize the format and minimum completeness level of agent deliveries.
 5. Mobile considerations
 6. Tests and validations
 7. Assumptions and pending items
+
+## Definition of Done (Delivery Gate)
+
+- File tree + responsibilities are clear enough to implement without guesswork.
+- DTOs/contracts are specified or assumptions are explicitly listed.
+- Screen state handling includes: loading, success, empty, error (and `unauthorized` when relevant).
+- The minimum test/validation checklist is actionable (commands or concrete steps).
 
 ## Anti-Patterns (Do Not Do)
 

@@ -9,6 +9,12 @@ description: Ensures accessibility and internationalization in Ionic Angular app
 
 Ensure screens are accessible and internationalizable from the initial implementation.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic UX quality checklist: apply regardless of tooling/assistant.
+- Prefer **explicit, testable** acceptance criteria (what to check, where, and expected behavior).
+- If the project i18n/a11y stack is unknown, propose a default and mark it as an assumption to validate.
+
 ## Apply When
 
 - creating/refactoring screens and components
@@ -23,6 +29,14 @@ Ensure screens are accessible and internationalizable from the initial implement
 - Preserve focus order and keyboard navigation when applicable.
 - Externalize text to the i18n layer (no hardcoding in templates).
 - Handle pluralization and translation fallback.
+
+## Structured Checklist (Baseline)
+
+- **Semantics**: correct roles/labels; icon-only buttons have `aria-label`/accessible text.
+- **Focus**: visible focus styles; predictable tab order; modals trap focus when applicable.
+- **Errors**: error messages are announced/readable; do not rely on color alone.
+- **i18n**: no hardcoded UI strings; pluralization supported; long strings do not break layout.
+  - Treat error strings from API as either localized keys or map them to localized messages.
 
 ## Recommended Flow
 

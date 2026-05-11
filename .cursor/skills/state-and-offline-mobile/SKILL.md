@@ -9,6 +9,12 @@ description: Defines local state, cache, and offline/online synchronization stra
 
 Define state and offline/online operation strategy in mobile apps.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic resilience playbook: define states, policies, and tests explicitly.
+- If storage/runtime constraints are unknown, choose a conservative default and mark it as an assumption.
+- Prefer designs that are debuggable: explicit status flags and deterministic transitions.
+
 ## Apply When
 
 - the screen depends on cache
@@ -23,6 +29,13 @@ Define state and offline/online operation strategy in mobile apps.
 - Explicitly define cache invalidation and synchronization policy.
 - Handle conflict reconciliation when offline writes exist.
 - Expose status to the UI (`offline`, `syncing`, `error`, `ready`).
+
+## Structured Offline Model (Baseline)
+
+- **Status model**: `ready | loading | offline | syncing | error`.
+- **Queue model**: operations are idempotent where possible; each item has `pending | running | failed | done`.
+- **Policies**: cache TTL, invalidation rules, retry strategy (bounded + backoff), and conflict rule.
+- **Security**: avoid storing secrets/PII unnecessarily in offline cache; encrypt at rest when required by policy.
 
 ## Recommended Flow
 

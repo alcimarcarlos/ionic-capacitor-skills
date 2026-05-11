@@ -9,6 +9,12 @@ description: Implements native integrations with Capacitor in a safe, cross-plat
 
 Ensure organized, resilient native integration compatible across web, Android, and iOS.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic native integration checklist: keep it portable across assistants and CI environments.
+- Do not assume a plugin works across platforms; include explicit platform checks and fallbacks.
+- Prefer adapter interfaces that allow **mocking** for tests and **web fallback** for development.
+
 ## Apply When
 
 - using a Capacitor plugin
@@ -25,6 +31,12 @@ Ensure organized, resilient native integration compatible across web, Android, a
 - Include a web fallback when the functionality allows it.
 - Consider `NgZone` when updating UI from a native callback.
 - Handle lifecycle (`App.addListener`) when the flow depends on foreground/background.
+
+## Security + Stability Baseline
+
+- **Permissions**: request only what is needed; handle denial/permanent denial; guide user to settings if required.
+- **Data**: never log/store sensitive payloads from native APIs without redaction.
+- **Resilience**: convert plugin exceptions into typed domain errors; avoid crashing UI on plugin failures.
 
 ## Recommended Flow
 

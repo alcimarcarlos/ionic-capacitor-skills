@@ -9,6 +9,12 @@ description: Standardizes the design token pipeline for Ionic Angular, connectin
 
 Create a consistent token definition and application flow to speed up visual implementation without divergence.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic theming/token playbook.
+- Prefer a **progressive adoption** plan (small set of tokens first) over a big-bang refactor.
+- If the project theming strategy is unknown, propose one and mark it as an assumption to validate against the repo.
+
 ## Apply When
 
 - starting the app visual theme
@@ -23,6 +29,12 @@ Create a consistent token definition and application flow to speed up visual imp
 - Separate global tokens from component overrides when needed.
 - Avoid direct colors/sizes in pages.
 - Define consistent token naming.
+
+## Clean UI Architecture Baseline
+
+- Tokens represent **meaning**, not raw values (e.g., `--color-surface`, not `--gray-100`).
+- Keep component APIs stable: consume tokens inside base components, not scattered per screen.
+- Validate accessibility as part of token definition (contrast, focus visibility).
 
 ## Recommended Flow
 

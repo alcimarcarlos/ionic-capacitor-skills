@@ -9,6 +9,12 @@ description: Optimizes rendering performance in Ionic Angular apps, covering lis
 
 Improve interface smoothness and response time on web, Android, and iOS.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic performance playbook: measure, change, verify.
+- Avoid “micro-optimizations” without evidence; prefer changes with clear trade-offs and measurable impact.
+- If device targets are unknown, assume at least one **low/mid-tier** Android device as baseline.
+
 ## Apply When
 
 - large lists have stuck/janky scroll
@@ -23,6 +29,21 @@ Improve interface smoothness and response time on web, Android, and iOS.
 - Use pagination/virtualization in large lists when appropriate.
 - Define perceptible skeleton/loading to reduce perceived wait.
 - Measure impact with an objective before/after criterion.
+
+## Structured Performance Approach
+
+- **Symptom**: what users perceive (freeze, jank, slow first paint).
+- **Metric**: objective check (render time, scroll FPS, network waterfall, memory growth).
+- **Hypothesis**: what likely causes it (change detection churn, image decode, DOM size, N+1 requests).
+- **Fix**: smallest change at the bottleneck (OnPush, trackBy, pagination, caching, prefetch).
+- **Verify**: before/after evidence + residual risks.
+
+## Baseline Practices (Angular + Ionic)
+
+- Lists: `trackBy`, avoid inline function bindings, minimize `async` pipes inside deep trees.
+- Change detection: consider `ChangeDetectionStrategy.OnPush` for heavy components.
+- Images: use proper sizing, lazy loading where supported, and avoid decoding huge assets.
+- Network: pagination/cursor; avoid loading “all at once”; cache where safe.
 
 ## Recommended Flow
 

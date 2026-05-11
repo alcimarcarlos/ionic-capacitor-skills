@@ -9,6 +9,12 @@ description: Standardizes Ionic/Angular integration with Laravel APIs, including
 
 Standardize the Ionic/Angular app data layer for reliable integration with Laravel APIs.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Use as a **vendor-agnostic** playbook; do not depend on proprietary agent features.
+- If endpoint/contract details are unknown, proceed with **declared assumptions** and a validation checklist.
+- Prefer **typed, testable, single-responsibility** services over “smart components”.
+
 ## Apply When
 
 - consuming/creating a REST endpoint
@@ -24,6 +30,18 @@ Standardize the Ionic/Angular app data layer for reliable integration with Larav
 - Centralize common behavior in an interceptor (Authorization, refresh, handling `401/403/422/500`).
 - Do not execute `HttpClient` directly in a page/component.
 - Handle loading, error, and empty states in the consumer.
+
+## Architecture + Structured Logic Baseline
+
+- Treat the API layer as a **boundary**: DTOs in/out, mapping at edges, no UI concerns.
+- Prefer **small methods** with clear intent (`list`, `getById`, `create`, `update`, `delete`).
+- Return **structured results** to UI layers (success payload vs typed error), not loosely-shaped objects.
+- Keep retry/refresh logic centralized to avoid divergent behavior across features.
+
+## Security + Performance Baseline
+
+- **Security**: avoid logging raw payloads/headers; redact tokens/PII; validate auth failure paths; handle `403` distinctly from `401`.
+- **Performance**: avoid duplicate in-flight requests; cache where safe; debounce search; prefer pagination/cursor patterns for large datasets.
 
 ## Recommended Flow
 

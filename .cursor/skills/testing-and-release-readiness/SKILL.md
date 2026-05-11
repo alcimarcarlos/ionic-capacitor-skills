@@ -9,6 +9,12 @@ description: Validates technical readiness of a mobile feature for merge/release
 
 Ensure the delivery is ready for technical and operational validation.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic release gate: prefer checklists with evidence over opinions.
+- If CI/device testing is unavailable, declare limitations and provide a **best-effort** validation plan.
+- Keep results structured: pass/fail/unknown with next actions.
+
 ## Apply When
 
 - finalizing a feature
@@ -25,6 +31,12 @@ Ensure the delivery is ready for technical and operational validation.
 - Deliver an objective checklist for the release gate.
 - Consolidate accessibility, performance, and security risks when applicable.
 
+## Structured Go/No-Go Output
+
+- **Evidence**: commands run, screenshots/log snippets, or explicit “not executed” notes.
+- **Risks**: severity (high/medium/low), impact, mitigation/rollback.
+- **Decision**: go/no-go with remaining blockers clearly listed.
+
 ## Recommended Flow
 
 1. Review changes by risk (data, UI, native, authentication, state).
@@ -40,6 +52,11 @@ Ensure the delivery is ready for technical and operational validation.
 - API calls cover success, timeout, and validation error (`422`).
 - Native permissions (when applicable) cover acceptance, denial, and permanent denial.
 - No critical visual regression on Android, iOS, and web (when supported).
+
+## Security + Performance Spot-Checks (When Relevant)
+
+- **Security**: tokens/PII are not logged; logout clears local state; `401/403` paths are safe.
+- **Performance**: key lists use `trackBy`; no obvious “load everything” regressions; images are sized/lazy loaded where applicable.
 
 ## Anti-Patterns (Do Not Do)
 

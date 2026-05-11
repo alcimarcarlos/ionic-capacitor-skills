@@ -9,6 +9,12 @@ description: Implements mobile forms with robust validation, masks, and consiste
 
 Standardize forms with validation, masks, and clear feedback to reduce input errors and rework.
 
+## Compatibility (Cursor, Codex, Claude Code)
+
+- Vendor-agnostic form checklist: contract -> validators -> UX -> backend error mapping.
+- If backend expects masked vs clean values, declare assumptions and include validation steps.
+- Prefer patterns that are testable with unit/integration tests (pure validators, deterministic parsing).
+
 ## Apply When
 
 - creating a signup/login/profile form
@@ -23,6 +29,12 @@ Standardize forms with validation, masks, and clear feedback to reduce input err
 - Handle backend validation (`422`) with field mapping.
 - Block invalid submit and show submission state.
 - Apply masks only when they improve UX and do not break accessibility.
+
+## Security + UX Baseline
+
+- **Security**: never log raw credentials; avoid persisting form values unnecessarily; treat API validation as untrusted input.
+- **UX**: show inline field errors + a top-level summary when appropriate; disable multiple submits; ensure accessible error announcements.
+- **Parsing**: keep “display value” separate from “clean value” sent to API; avoid ambiguous formats.
 
 ## Recommended Flow
 
