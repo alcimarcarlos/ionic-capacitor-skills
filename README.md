@@ -1,237 +1,125 @@
-# Ionic/Capacitor/Angular Skills Starter
+# Ionic Capacitor Angular Skills
 
-## PT_BR
+## Objetivo
 
-Base de projeto com skills focadas no desenvolvimento de apps Ionic + Capacitor + Angular integrados com API Laravel.
+Skills para apps Ionic + Capacitor + Angular integrados a APIs Laravel, cobrindo arquitetura, UX mobile, dados, offline, plugins nativos, segurança, acessibilidade, performance e release readiness.
 
-### Objetivo
+Este pacote não é uma aplicação final. Ele é uma coleção portátil de instruções para agentes de código trabalharem em projetos reais com padrões consistentes.
 
-Este repositório nao e o app final. Ele e a base de trabalho para uso com agentes de IA:
+## Compatibilidade
 
-- governanca do agente
-- skills especializadas
-- convencoes de arquitetura
-- padroes de integracao com API Laravel
-- padroes mobile hibridos com Ionic/Capacitor
+| Agente | Entrada recomendada |
+| --- | --- |
+| Cursor | `.cursor/rules/skills.mdc` e aliases em `.cursor/skills/<skill-name>` |
+| Codex | `skills/<skill-name>/SKILL.md` ou cópia/symlink em `$CODEX_HOME/skills` |
+| Claude Code | `CLAUDE.md`, depois `skills/<skill-name>/SKILL.md` |
+| GitHub Copilot | `.github/copilot-instructions.md`, apontando para `AGENTS.md` e `skills/` |
 
-### Estrutura
+## Estrutura
 
-- `AGENTS.md`: governanca global do agente
-- `.cursor/skills/*/SKILL.md`: skills especializadas
-- `.cursor/skills/*/reference.md`: referencias detalhadas por skill
-- `docs/mobile-guidelines.md`: diretrizes do projeto
+- `AGENTS.md`: instruções operacionais para agentes.
+- `CLAUDE.md`: ponto de entrada curto para Claude Code.
+- `.cursor/rules/skills.mdc`: regra de descoberta para Cursor.
+- `.cursor/skills/<skill-name>`: symlink para `skills/<skill-name>`.
+- `.github/copilot-instructions.md`: instruções curtas para GitHub Copilot.
+- `skills/<skill-name>/SKILL.md`: fonte canônica da skill.
+- `skills/<skill-name>/reference.md`: detalhes carregados somente quando a skill pedir.
 
-### Compatibilidade (Claude, Cursor e Codex)
+## Stack Coberta
 
-- Este pacote foi escrito para uso multiagente.
-- `AGENTS.md` contem regras gerais de comportamento e formato de entrega.
-- Os arquivos `.cursor/skills/*/SKILL.md` podem ser usados:
-  - diretamente no Cursor (skills nativas), ou
-  - como playbooks manuais no Claude/Codex (copiando o conteudo relevante para o prompt).
-- Ao usar Claude/Codex, priorize:
-  1. `AGENTS.md`
-  2. a skill especifica do tema
-  3. `feature-delivery-orchestrator` para fluxo ponta a ponta
+- Ionic
+- Capacitor
+- Angular
+- TypeScript
+- Laravel API
 
-### Skills Disponiveis
+## Como Escolher Skills
 
-#### Base Atual
+1. Leia `AGENTS.md` para as regras gerais da coleção.
+2. Escolha a menor skill que cobre a tarefa.
+3. Use `feature-delivery-orchestrator` como baseline quando a tarefa cruzar vários temas.
+4. Leia `reference.md` apenas quando a skill ou a complexidade da tarefa pedir.
+5. Valide com os comandos disponíveis no projeto alvo.
 
-- `api-data-access-laravel-backend`: integracao HTTP com Laravel (DTOs, services, interceptors, auth e erros).
-- `capacitor-native-integration`: plugins nativos, permissoes, ciclo de vida e fallback web.
-- `ionic-angular-architecture`: organizacao por feature, pages/components/services e rotas.
-- `state-and-offline-mobile`: estado local, cache, fila offline e sincronizacao.
-- `testing-and-release-readiness`: testes, riscos e checklist de release gate.
+## Skills Disponíveis
 
-#### Skills Prioritarias para Telas
+| Skill | Quando usar |
+| --- | --- |
+| `accessibility-and-i18n-mobile` | Ensures accessibility and internationalization in Ionic Angular apps, covering contrast, focus, semantics, screen readers, and localized text. Use when implementing or reviewing screens for inclusive UX quality and multilingual support. |
+| `api-data-access-laravel-backend` | Standardizes Ionic/Angular integration with Laravel APIs, including HTTP services, DTOs, interceptors, authentication, and error handling. Use when consuming endpoints, request/response contracts, pagination, filters, or auth flows in the Laravel backend. |
+| `app-shell-navigation-blueprint` | Defines the base Ionic Angular app structure with shell, onboarding/auth/main/settings flows, guards, and consistent navigation. Use when starting a new app or reorganizing main navigation. |
+| `capacitor-native-integration` | Implements native integrations with Capacitor in a safe, cross-platform way, covering plugins, permissions, lifecycle, and web fallback. Use when there is camera, files, notifications, biometrics, network, or any native API. |
+| `code-generation-contract` | Enforces a mandatory output contract for Ionic Angular code generation, ensuring architecture, integration, screen states, and validation consistency. Use when requesting implementation of any screen, flow, or feature. |
+| `design-system-and-ui-consistency` | Defines and applies visual consistency in Ionic Angular apps with tokens, base components, and UI states. Use when implementing new screens, refactoring interfaces, aligning with Figma, or reducing layout divergence. |
+| `design-tokens-pipeline` | Standardizes the design token pipeline for Ionic Angular, connecting design colors, typography, and spacing to app styles. Use when aligning UI with Figma, creating a theme, or reducing visual inconsistencies. |
+| `feature-delivery-orchestrator` | Orchestrates end-to-end mobile feature delivery, from Figma to release, activating technical skills in the correct order and applying quality gates. Use when the goal is to implement a complete feature with architectural consistency and delivery readiness. |
+| `figma-to-feature-mapping` | Converts Figma screens into a technical implementation backlog for Ionic Angular, including features, routes, components, states, and acceptance criteria. Use when starting development from a design or reviewing functional screen coverage. |
+| `forms-validation-and-input-masks` | Implements mobile forms with robust validation, masks, and consistent error UX in Ionic Angular. Use when creating or refactoring signup, login, profile, filter screens, and any user data input. |
+| `ionic-angular-architecture` | Organizes Ionic Angular architecture by feature with lean pages, reusable components, domain services, and predictable routes. Use when creating/refactoring screens, navigation, modules, or folder structure. |
+| `list-detail-search-and-filters` | Structures list and detail flows with search, filters, sorting, and pagination in Ionic Angular. Use when implementing catalog, history, query screens, or any list-detail experience in the app. |
+| `mobile-performance-and-rendering` | Optimizes rendering performance in Ionic Angular apps, covering lists, images, detection cycle, and progressive loading. Use when screens show slowness, jank, excessive consumption, or performance regression risk. |
+| `screen-state-matrix` | Generates a mandatory state matrix per screen for Ionic Angular apps, covering loading, success, empty, error, unauthorized, and offline. Use when implementing or reviewing screens to avoid UX gaps and functional regressions. |
+| `security-and-sensitive-data-mobile` | Defines security practices for sensitive data in Ionic Capacitor apps, covering secure storage, session, biometrics, and protection of information in transit and at rest. Use when there is authentication, tokens, personal data, or critical operations. |
+| `state-and-offline-mobile` | Defines local state, cache, and offline/online synchronization strategy for mobile apps, focused on resilience and predictability. Use when there is unstable connectivity, offline queue, temporary persistence, or data reconciliation. |
+| `testing-and-release-readiness` | Validates technical readiness of a mobile feature for merge/release with build, tests, risks, and Android/iOS/web compatibility checklist. Use when closing a feature, final PR review, or preparing a release. |
 
-- `design-system-and-ui-consistency`: consistencia visual e componentes base alinhados ao design.
-- `forms-validation-and-input-masks`: formularios com validacao robusta, mascaras e UX de erro.
-- `list-detail-search-and-filters`: fluxos lista/detalhe com busca, filtros e paginacao.
-- `accessibility-and-i18n-mobile`: acessibilidade e internacionalizacao para UX inclusiva e multilingue.
-- `mobile-performance-and-rendering`: performance de renderizacao, listas e carregamento visual.
-- `security-and-sensitive-data-mobile`: protecao de sessao e tratamento de dados sensiveis no app mobile.
+## Qualidade e Validação
 
-#### Estruturacao Completa do App
+Execute o menor conjunto relevante que existir no projeto alvo:
 
-- `figma-to-feature-mapping`: converte telas em backlog tecnico por feature, rota, estado e criterio de aceite.
-- `code-generation-contract`: define formato minimo obrigatorio de saida para geracao consistente de codigo.
-- `app-shell-navigation-blueprint`: define app shell, areas autenticadas/publicas, guards e fluxo principal.
-- `screen-state-matrix`: garante cobertura de estados e transicoes de tela.
-- `design-tokens-pipeline`: padroniza tokens visuais e aplicacao em tema/componentes.
-- `feature-delivery-orchestrator`: orquestra o fluxo completo de entrega de feature, do design ao release gate.
+- `npm test`
+- `npm run lint`
+- `npm run build`
+- `ionic build`
+- `npx cap sync`
+- `npx cap doctor`
 
-### Quando Usar Cada Skill
+## Notas de Uso
 
-- **Laravel API**: sempre que houver endpoint, contrato de dados ou autenticacao HTTP.
-- **Capacitor Native**: ao tocar camera, arquivos, notificacoes, biometria ou permissoes.
-- **Ionic Angular Architecture**: ao criar/refatorar feature, rotas ou estrutura de pastas.
-- **State/Offline**: em conectividade instavel, cache e sincronizacao posterior.
-- **Testing/Release**: ao fechar feature e antes de merge/release.
-- **Design System/UI**: ao implementar telas baseadas em Figma ou corrigir inconsistencia visual.
-- **Forms/Validation**: em qualquer fluxo de entrada de dados do usuario.
-- **List/Detail/Filters**: em catalogo, historico, consulta e navegacao lista -> detalhe.
-- **Figma Mapping**: ao iniciar desenvolvimento a partir de design e transformar frames em backlog tecnico.
-- **Generation Contract**: para garantir entregas completas e consistentes em qualquer tarefa de codigo.
-- **App Shell/Navigation**: ao estruturar fluxo base de onboarding, auth, tabs e configuracoes.
-- **State Matrix**: para evitar lacunas de UX em loading/vazio/erro/offline/unauthorized.
-- **Tokens Pipeline**: ao alinhar tema visual e reduzir estilos hardcoded.
-- **Delivery Orchestrator**: quando todas as skills devem ser coordenadas em sequencia para entrega ponta a ponta.
-- **Accessibility and i18n**: para validar inclusao, semantica e suporte a idiomas.
-- **Mobile Performance**: para otimizar fluidez, scroll e tempo de resposta em telas criticas.
-- **Data Security**: para tratar sessao, armazenamento e protecao de dados sensiveis.
+- Cubra estados loading, success, empty, error, unauthorized e offline quando aplicável.
+- Isole integrações nativas em serviços/adapters com fallback web.
+- Declare contratos de API e suposições quando o backend não estiver definido.
 
-### Como Usar
+## Instalação por Symlink
 
-1. Abra esta pasta no seu ambiente de desenvolvimento.
-2. Mantenha `AGENTS.md` na raiz.
-3. Mantenha as skills em `.cursor/skills/` (ou replique a mesma estrutura em outra pasta se seu agente nao usa skills nativas do Cursor).
-4. Solicite tarefas ao agente citando claramente o contexto do modulo.
-5. Para geracao de codigo, informe sempre:
-   - objetivo da tela ou fluxo
-   - endpoint/API envolvido
-   - regra de negocio
-   - perfil de usuario
-   - impacto offline/online
+Para Codex:
 
-### Fluxo Recomendado
-
-1. Definir modulo
-2. Definir contrato com backend Laravel
-3. Gerar page/component/service/store
-4. Validar integracao Capacitor
-5. Validar UX Ionic
-6. Revisar testes e build
-
-### Exemplo de Uso no Claude/Codex
-
-Prompt sugerido:
-
-```text
-Siga o arquivo AGENTS.md deste projeto e use como base as skills:
-- feature-delivery-orchestrator
-- ionic-angular-architecture
-- api-data-access-laravel-backend
-
-Tarefa:
-<descreva aqui a feature>
+```bash
+mkdir -p "$HOME/.codex/skills"
+for d in skills/*; do
+  name="$(basename "$d")"
+  ln -sfn "$(pwd)/$d" "$HOME/.codex/skills/$name"
+done
 ```
 
----
+Para Claude Code:
 
-## EN
+```bash
+mkdir -p "$HOME/.claude/skills"
+for d in skills/*; do
+  name="$(basename "$d")"
+  ln -sfn "$(pwd)/$d" "$HOME/.claude/skills/$name"
+done
+```
 
-Project base with skills focused on developing Ionic + Capacitor + Angular apps integrated with a Laravel API.
+Para Cursor em um projeto consumidor:
 
-### Objective
+```bash
+mkdir -p .cursor/skills
+for d in skills/*; do
+  name="$(basename "$d")"
+  ln -sfn "../../skills/$name" ".cursor/skills/$name"
+done
+```
 
-This repository is not the final app. It is the working base for use with AI agents:
-
-- agent governance
-- specialized skills
-- architecture conventions
-- Laravel API integration patterns
-- hybrid mobile patterns with Ionic/Capacitor
-
-### Structure
-
-- `AGENTS.md`: global agent governance
-- `.cursor/skills/*/SKILL.md`: specialized skills
-- `.cursor/skills/*/reference.md`: detailed references by skill
-- `docs/mobile-guidelines.md`: project guidelines
-
-### Compatibility (Claude, Cursor, and Codex)
-
-- This package was written for multi-agent use.
-- `AGENTS.md` contains general behavior rules and the delivery format.
-- `.cursor/skills/*/SKILL.md` files can be used:
-  - directly in Cursor (native skills), or
-  - as manual playbooks in Claude/Codex (by copying the relevant content into the prompt).
-- When using Claude/Codex, prioritize:
-  1. `AGENTS.md`
-  2. the topic-specific skill
-  3. `feature-delivery-orchestrator` for end-to-end flow
-
-### Available Skills
-
-#### Current Base
-
-- `api-data-access-laravel-backend`: HTTP integration with Laravel (DTOs, services, interceptors, auth, and errors).
-- `capacitor-native-integration`: native plugins, permissions, lifecycle, and web fallback.
-- `ionic-angular-architecture`: organization by feature, pages/components/services, and routes.
-- `state-and-offline-mobile`: local state, cache, offline queue, and synchronization.
-- `testing-and-release-readiness`: tests, risks, and release gate checklist.
-
-#### Priority Skills for Screens
-
-- `design-system-and-ui-consistency`: visual consistency and base components aligned with the design.
-- `forms-validation-and-input-masks`: forms with robust validation, masks, and error UX.
-- `list-detail-search-and-filters`: list/detail flows with search, filters, and pagination.
-- `accessibility-and-i18n-mobile`: accessibility and internationalization for inclusive, multilingual UX.
-- `mobile-performance-and-rendering`: rendering performance, lists, and visual loading.
-- `security-and-sensitive-data-mobile`: session protection and sensitive data handling in the mobile app.
-
-#### Full App Structuring
-
-- `figma-to-feature-mapping`: converts screens into a technical backlog by feature, route, state, and acceptance criterion.
-- `code-generation-contract`: defines the mandatory minimum output format for consistent code generation.
-- `app-shell-navigation-blueprint`: defines the app shell, authenticated/public areas, guards, and main flow.
-- `screen-state-matrix`: enforces coverage of screen states and transitions.
-- `design-tokens-pipeline`: standardizes visual tokens and their application in theme/components.
-- `feature-delivery-orchestrator`: orchestrates the complete feature delivery flow, from design to release gate.
-
-### When to Use Each Skill
-
-- **Laravel API**: whenever there is an endpoint, data contract, or HTTP authentication.
-- **Capacitor Native**: when touching camera, files, notifications, biometrics, or permissions.
-- **Ionic Angular Architecture**: when creating/refactoring a feature, routes, or folder structure.
-- **State/Offline**: in unstable connectivity, cache, and later synchronization.
-- **Testing/Release**: when closing a feature and before merge/release.
-- **Design System/UI**: when implementing Figma-based screens or fixing visual inconsistency.
-- **Forms/Validation**: in any user data input flow.
-- **List/Detail/Filters**: in catalog, history, query, and list -> detail navigation.
-- **Figma Mapping**: when starting development from a design and turning frames into a technical backlog.
-- **Generation Contract**: to ensure complete and consistent deliveries in any code task.
-- **App Shell/Navigation**: when structuring the base flow for onboarding, auth, tabs, and settings.
-- **State Matrix**: to avoid UX gaps in loading/empty/error/offline/unauthorized.
-- **Tokens Pipeline**: when aligning the visual theme and reducing hardcoded styles.
-- **Delivery Orchestrator**: when all skills must be coordinated in sequence for end-to-end delivery.
-- **Accessibility and i18n**: to validate inclusion, semantics, and language support.
-- **Mobile Performance**: to optimize smoothness, scroll, and response time on critical screens.
-- **Data Security**: to handle session, storage, and sensitive data protection.
-
-### How to Use
-
-1. Open this folder in your development environment.
-2. Keep `AGENTS.md` at the root.
-3. Keep skills in `.cursor/skills/` (or replicate the same structure in another folder if your agent does not use native Cursor skills).
-4. Ask the agent for tasks while clearly citing the module context.
-5. For code generation, always provide:
-   - objective of the screen or flow
-   - involved endpoint/API
-   - business rule
-   - user role
-   - offline/online impact
-
-### Recommended Flow
-
-1. Define module
-2. Define contract with Laravel backend
-3. Generate page/component/service/store
-4. Validate Capacitor integration
-5. Validate Ionic UX
-6. Review tests and build
-
-### Usage Example in Claude/Codex
-
-Suggested prompt:
+## Prompt Base
 
 ```text
-Follow this project's AGENTS.md file and use these skills as a base:
-- feature-delivery-orchestrator
-- ionic-angular-architecture
-- api-data-access-laravel-backend
+Siga AGENTS.md, escolha a menor skill aplicável em skills/<nome>/SKILL.md e carregue reference.md somente se necessário.
 
-Task:
-<describe the feature here>
+Contexto:
+- Stack: Ionic, Capacitor, Angular, TypeScript, Laravel API
+- Objetivo: <descreva a tarefa>
+- Restrições: <auth, dados, UX, performance, compatibilidade>
+- Validação esperada: <testes/build/lint>
 ```

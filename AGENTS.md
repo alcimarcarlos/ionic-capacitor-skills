@@ -1,88 +1,64 @@
-# Mobile Agent Governance
+# Ionic Capacitor Angular Skills Agent Instructions
 
-You act as a technical agent for hybrid mobile apps.
+Use este arquivo como orientação operacional para Cursor, Codex, Claude Code e GitHub Copilot.
 
-## Agent Compatibility
+## Princípios
 
-This guide is vendor-agnostic and should work with Claude, Cursor, and Codex.
+- Use a menor skill aplicável em `skills/<skill-name>/SKILL.md`.
+- Trate `skills/` como fonte canônica; `.cursor/skills/` contém apenas aliases.
+- Leia `reference.md` somente quando a skill pedir ou quando a tarefa exigir detalhe adicional.
+- Inspecione as convenções do projeto alvo antes de criar novos padrões.
+- Prefira linguagem e passos agnósticos de ferramenta.
+- Preserve segurança, validação, testes e performance como critérios explícitos de entrega.
 
-- Treat the instructions in this file as behavioral priority.
-- When the platform does not support native "skills", use the `SKILL.md` files as manual playbooks.
-- Keep the standard delivery format regardless of the agent.
-
-## Target Stack
+## Stack Coberta
 
 - Ionic
 - Capacitor
 - Angular
 - TypeScript
 - Laravel API
-- token/session authentication according to the backend
 
-## General Rules
+## Ordem de Decisão
 
-- Reply in English.
-- Generate code and technical names in English when technically appropriate.
-- Prioritize clear architecture, componentization, and predictability.
-- Do not invent API contracts. When there is no explicit contract, ask for it or infer it with caveats.
-- Do not place complex business rules inside page components.
-- Prefer separation by feature/module.
-- For native integrations, isolate access in services/adapters.
-- Always consider differences between web, Android, and iOS.
-- In data flows, prioritize explicit DTOs/interfaces.
-- In Ionic screens, prefer Ionic ecosystem components before generic HTML.
-- Do not consider screen deliveries complete without covering loading, success, empty, and error states.
-- When the API contract is missing, declare the assumption explicitly and mark it as a validation point.
-- In features with mobile risk, explain web, Android, and iOS differences in the response.
-- Include a minimum test for each critical flow before considering the task complete.
+1. Identifique o domínio real da tarefa e as dependências já presentes no projeto alvo.
+2. Escolha a skill principal mais específica.
+3. Use `feature-delivery-orchestrator` como baseline quando houver múltiplas áreas.
+4. Adicione skills complementares só quando houver risco real de segurança, dados, UX, performance ou testes.
+5. Antes de editar, leia arquivos vizinhos e padrões existentes.
+6. Ao finalizar, reporte validações executadas e pendências.
 
-## Standard Delivery Format
+## Qualidade Mínima
 
-When generating a solution, deliver in this order:
+- Cubra estados loading, success, empty, error, unauthorized e offline quando aplicável.
+- Isole integrações nativas em serviços/adapters com fallback web.
+- Declare contratos de API e suposições quando o backend não estiver definido.
+- Código deve seguir padrões locais do projeto alvo.
+- Mudanças devem ser pequenas, verificáveis e fáceis de revisar.
+- Não introduza frameworks, bibliotecas ou serviços opcionais só porque uma skill existe.
 
-1. Objective
-2. File structure
-3. Code
-4. API integration
-5. Mobile considerations
-6. Tests and validations
-7. Assumptions and validation pending items
+## Comandos de Validação
 
-## Recommended Base Prompt (Multi-Agent)
+Use o menor conjunto que existir no projeto alvo:
 
-Use this template when starting tasks in any agent:
+- `npm test`
+- `npm run lint`
+- `npm run build`
+- `ionic build`
+- `npx cap sync`
+- `npx cap doctor`
 
-```text
-Context:
-- Stack: Ionic + Capacitor + Angular + TypeScript + Laravel API
-- Task objective: <describe>
-- Screen/flow: <describe>
-- Business rules: <describe>
-- Endpoint/payload: <describe or mark as assumption>
-- Role/permission: <describe>
-- Offline/online impact: <describe>
+## Compatibilidade por Agente
 
-Delivery instructions:
-- Follow AGENTS.md and relevant skills
-- Deliver in this format: Objective, File structure, Code, API integration, Mobile considerations, Tests, Assumptions
-```
+- Cursor: use `.cursor/rules/skills.mdc` e `.cursor/skills/<skill-name>`.
+- Codex: use `skills/<skill-name>/SKILL.md` ou instale em `$CODEX_HOME/skills`.
+- Claude Code: comece por `CLAUDE.md` e depois pela skill específica.
+- GitHub Copilot: mantenha `.github/copilot-instructions.md` curto e apontando para este arquivo.
 
-## Mobile Context-Specific Rules
+## Formato de Resposta Recomendado
 
-- Assume integration with a Laravel backend.
-- Assume frequent need for authentication, listings, and filters.
-- Prefer services for API consumption.
-- Prefer interceptors for authentication, headers, and common error handling.
-- Handle loading, error, empty, and success states in screens.
-- When there is risk of offline/intermittent operation, consider local cache and synchronization strategy.
-
-## When to Ask for More Context
-
-Ask for more context when any of the following is missing:
-
-- endpoint
-- payload
-- business rule
-- roles/permissions
-- offline behavior
-- specific native plugin
+1. Objetivo
+2. Arquivos alterados
+3. Decisões de implementação
+4. Testes e validação
+5. Riscos, suposições e pendências
