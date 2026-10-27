@@ -1,6 +1,6 @@
 ---
 name: state-and-offline-mobile
-description: "Defines local state, cache, and offline/online synchronization strategy for mobile apps, focused on resilience and predictability. Use when there is unstable connectivity, offline queue, temporary persistence, or data reconciliation."
+description: "Mobile offline state & sync: local cache, network resilience, offline queue, conflict handling. Trigger on offline capabilities."
 license: UNLICENSED
 ---
 

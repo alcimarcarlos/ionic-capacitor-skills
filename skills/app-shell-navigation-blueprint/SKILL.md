@@ -1,6 +1,6 @@
 ---
 name: app-shell-navigation-blueprint
-description: "Defines the base Ionic Angular app structure with shell, onboarding/auth/main/settings flows, guards, and consistent navigation. Use when starting a new app or reorganizing main navigation."
+description: "Ionic Angular navigation blueprint: app shell, auth flows, guards, tab routing. Trigger on app routing."
 license: UNLICENSED
 ---
 

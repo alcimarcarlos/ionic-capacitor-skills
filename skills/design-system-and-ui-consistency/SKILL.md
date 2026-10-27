@@ -1,6 +1,6 @@
 ---
 name: design-system-and-ui-consistency
-description: "Defines and applies visual consistency in Ionic Angular apps with tokens, base components, and UI states. Use when implementing new screens, refactoring interfaces, aligning with Figma, or reducing layout divergence."
+description: "Ionic Angular design consistency: tokens, base components, typography, layout states. Trigger on UI refactoring."
 license: UNLICENSED
 ---
 

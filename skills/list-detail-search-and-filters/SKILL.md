@@ -1,6 +1,6 @@
 ---
 name: list-detail-search-and-filters
-description: "Structures list and detail flows with search, filters, sorting, and pagination in Ionic Angular. Use when implementing catalog, history, query screens, or any list-detail experience in the app."
+description: "List and detail flows in Ionic Angular: search, filters, pagination, virtual scroll. Trigger on catalog and list screens."
 license: UNLICENSED
 ---
 

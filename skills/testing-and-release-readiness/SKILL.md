@@ -1,6 +1,6 @@
 ---
 name: testing-and-release-readiness
-description: "Validates technical readiness of a mobile feature for merge/release with build, tests, risks, and Android/iOS/web compatibility checklist. Use when closing a feature, final PR review, or preparing a release."
+description: "Mobile release readiness: unit/E2E tests, build checks, iOS/Android compatibility checklist. Trigger before merge/release."
 license: UNLICENSED
 ---
 

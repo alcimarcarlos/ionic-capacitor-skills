@@ -1,6 +1,6 @@
 ---
 name: figma-to-feature-mapping
-description: "Converts Figma screens into a technical implementation backlog for Ionic Angular, including features, routes, components, states, and acceptance criteria. Use when starting development from a design or reviewing functional screen coverage."
+description: "Converts Figma screens into Ionic Angular technical backlog: routes, components, acceptance criteria. Trigger on design intake."
 license: UNLICENSED
 ---
 

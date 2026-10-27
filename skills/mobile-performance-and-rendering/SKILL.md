@@ -1,6 +1,6 @@
 ---
 name: mobile-performance-and-rendering
-description: "Optimizes rendering performance in Ionic Angular apps, covering lists, images, detection cycle, and progressive loading. Use when screens show slowness, jank, excessive consumption, or performance regression risk."
+description: "Mobile rendering performance: virtual scroll, image optimization, change detection, trackBy. Trigger on performance fixes."
 license: UNLICENSED
 ---
 

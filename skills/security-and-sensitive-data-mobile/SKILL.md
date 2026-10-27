@@ -1,6 +1,6 @@
 ---
 name: security-and-sensitive-data-mobile
-description: "Defines security practices for sensitive data in Ionic Capacitor apps, covering secure storage, session, biometrics, and protection of information in transit and at rest. Use when there is authentication, tokens, personal data, or critical operations."
+description: "Mobile security in Ionic/Capacitor: secure storage, session cleanup, biometrics, tokens. Trigger on sensitive data/auth."
 license: UNLICENSED
 ---
 

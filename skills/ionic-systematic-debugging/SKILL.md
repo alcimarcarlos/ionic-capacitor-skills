@@ -1,6 +1,6 @@
 ---
 name: ionic-systematic-debugging
-description: "Systematic root-cause debugging protocol for Ionic, Capacitor, and Angular: prohibits guessing, enforces minimal failing unit/integration tests, single-variable fixes, and mobile bridge verification."
+description: "Ionic/Capacitor systematic debugging: minimal test reproducers, bridge isolation. Trigger when diagnosing mobile bugs."
 license: UNLICENSED
 ---
 

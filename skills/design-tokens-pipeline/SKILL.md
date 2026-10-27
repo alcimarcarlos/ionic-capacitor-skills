@@ -1,6 +1,6 @@
 ---
 name: design-tokens-pipeline
-description: "Standardizes the design token pipeline for Ionic Angular, connecting design colors, typography, and spacing to app styles. Use when aligning UI with Figma, creating a theme, or reducing visual inconsistencies."
+description: "Design token pipeline for Ionic Angular: colors, spacing, CSS variables, Figma alignment. Trigger on styling/theming."
 license: UNLICENSED
 ---
 

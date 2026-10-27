@@ -1,6 +1,6 @@
 ---
 name: feature-delivery-orchestrator
-description: "Orchestrates end-to-end mobile feature delivery, from Figma to release, activating technical skills in the correct order and applying quality gates. Use when the goal is to implement a complete feature with architectural consistency and delivery readiness."
+description: "Orchestrates mobile feature delivery from Figma to release across skills and gates. Trigger on complete feature flows."
 license: UNLICENSED
 ---
 

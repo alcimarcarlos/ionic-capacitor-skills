@@ -1,6 +1,6 @@
 ---
 name: api-data-access-laravel-backend
-description: "Standardizes Ionic/Angular integration with Laravel APIs, including HTTP services, DTOs, interceptors, authentication, and error handling. Use when consuming endpoints, request/response contracts, pagination, filters, or auth flows in the Laravel backend."
+description: "Ionic/Angular integration with Laravel APIs: HTTP services, DTOs, interceptors, auth. Trigger on backend consumption."
 license: UNLICENSED
 ---
 

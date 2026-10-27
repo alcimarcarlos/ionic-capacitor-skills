@@ -1,6 +1,6 @@
 ---
 name: capacitor-native-integration
-description: "Implements native integrations with Capacitor in a safe, cross-platform way, covering plugins, permissions, lifecycle, and web fallback. Use when there is camera, files, notifications, biometrics, network, or any native API."
+description: "Capacitor native integration: plugins, permissions, lifecycle, web fallbacks. Trigger on camera, storage, native APIs."
 license: UNLICENSED
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: screen-state-matrix
-description: "Generates a mandatory state matrix per screen for Ionic Angular apps, covering loading, success, empty, error, unauthorized, and offline. Use when implementing or reviewing screens to avoid UX gaps and functional regressions."
+description: "Mandatory screen state matrix for Ionic: loading, success, empty, error, offline. Trigger when building screen states."
 license: UNLICENSED
 ---
 

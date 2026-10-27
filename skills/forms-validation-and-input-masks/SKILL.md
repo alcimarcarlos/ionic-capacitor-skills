@@ -1,6 +1,6 @@
 ---
 name: forms-validation-and-input-masks
-description: "Implements mobile forms with robust validation, masks, and consistent error UX in Ionic Angular. Use when creating or refactoring signup, login, profile, filter screens, and any user data input."
+description: "Mobile forms in Ionic Angular: reactive forms, masks, validation, error UX. Trigger on form input screens."
 license: UNLICENSED
 ---
 

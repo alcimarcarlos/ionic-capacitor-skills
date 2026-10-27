@@ -1,6 +1,6 @@
 ---
 name: accessibility-and-i18n-mobile
-description: "Ensures accessibility and internationalization in Ionic Angular apps, covering contrast, focus, semantics, screen readers, and localized text. Use when implementing or reviewing screens for inclusive UX quality and multilingual support."
+description: "Mobile accessibility and i18n in Ionic Angular: contrast, focus, ARIA, translations. Trigger on inclusive UX."
 license: UNLICENSED
 ---
 

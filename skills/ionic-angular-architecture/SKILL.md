@@ -1,6 +1,6 @@
 ---
 name: ionic-angular-architecture
-description: "Organizes Ionic Angular architecture by feature with lean pages, reusable components, domain services, and predictable routes. Use when creating/refactoring screens, navigation, modules, or folder structure."
+description: "Ionic Angular architecture: feature modules, lean pages, domain services, clean routes. Trigger on component/feature architecture."
 license: UNLICENSED
 ---
 

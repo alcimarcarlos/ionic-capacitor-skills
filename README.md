@@ -45,24 +45,24 @@ Este pacote não é uma aplicação final. Ele é uma coleção portátil de ins
 
 | Skill | Quando usar |
 | --- | --- |
-| `accessibility-and-i18n-mobile` | Ensures accessibility and internationalization in Ionic Angular apps, covering contrast, focus, semantics, screen readers, and localized text. Use when implementing or reviewing screens for inclusive UX quality and multilingual support. |
-| `api-data-access-laravel-backend` | Standardizes Ionic/Angular integration with Laravel APIs, including HTTP services, DTOs, interceptors, authentication, and error handling. Use when consuming endpoints, request/response contracts, pagination, filters, or auth flows in the Laravel backend. |
-| `app-shell-navigation-blueprint` | Defines the base Ionic Angular app structure with shell, onboarding/auth/main/settings flows, guards, and consistent navigation. Use when starting a new app or reorganizing main navigation. |
-| `capacitor-native-integration` | Implements native integrations with Capacitor in a safe, cross-platform way, covering plugins, permissions, lifecycle, and web fallback. Use when there is camera, files, notifications, biometrics, network, or any native API. |
-| `code-generation-contract` | Enforces a mandatory output contract for Ionic Angular code generation, ensuring architecture, integration, screen states, and validation consistency. Use when requesting implementation of any screen, flow, or feature. |
-| `design-system-and-ui-consistency` | Defines and applies visual consistency in Ionic Angular apps with tokens, base components, and UI states. Use when implementing new screens, refactoring interfaces, aligning with Figma, or reducing layout divergence. |
-| `design-tokens-pipeline` | Standardizes the design token pipeline for Ionic Angular, connecting design colors, typography, and spacing to app styles. Use when aligning UI with Figma, creating a theme, or reducing visual inconsistencies. |
-| `feature-delivery-orchestrator` | Orchestrates end-to-end mobile feature delivery, from Figma to release, activating technical skills in the correct order and applying quality gates. Use when the goal is to implement a complete feature with architectural consistency and delivery readiness. |
-| `figma-to-feature-mapping` | Converts Figma screens into a technical implementation backlog for Ionic Angular, including features, routes, components, states, and acceptance criteria. Use when starting development from a design or reviewing functional screen coverage. |
-| `forms-validation-and-input-masks` | Implements mobile forms with robust validation, masks, and consistent error UX in Ionic Angular. Use when creating or refactoring signup, login, profile, filter screens, and any user data input. |
-| `ionic-angular-architecture` | Organizes Ionic Angular architecture by feature with lean pages, reusable components, domain services, and predictable routes. Use when creating/refactoring screens, navigation, modules, or folder structure. |
-| `ionic-systematic-debugging` | Systematic root-cause debugging protocol for Ionic, Capacitor, and Angular: prohibits guessing, enforces minimal failing unit/integration tests, single-variable fixes, and mobile bridge verification. |
-| `list-detail-search-and-filters` | Structures list and detail flows with search, filters, sorting, and pagination in Ionic Angular. Use when implementing catalog, history, query screens, or any list-detail experience in the app. |
-| `mobile-performance-and-rendering` | Optimizes rendering performance in Ionic Angular apps, covering lists, images, detection cycle, and progressive loading. Use when screens show slowness, jank, excessive consumption, or performance regression risk. |
-| `screen-state-matrix` | Generates a mandatory state matrix per screen for Ionic Angular apps, covering loading, success, empty, error, unauthorized, and offline. Use when implementing or reviewing screens to avoid UX gaps and functional regressions. |
-| `security-and-sensitive-data-mobile` | Defines security practices for sensitive data in Ionic Capacitor apps, covering secure storage, session, biometrics, and protection of information in transit and at rest. Use when there is authentication, tokens, personal data, or critical operations. |
-| `state-and-offline-mobile` | Defines local state, cache, and offline/online synchronization strategy for mobile apps, focused on resilience and predictability. Use when there is unstable connectivity, offline queue, temporary persistence, or data reconciliation. |
-| `testing-and-release-readiness` | Validates technical readiness of a mobile feature for merge/release with build, tests, risks, and Android/iOS/web compatibility checklist. Use when closing a feature, final PR review, or preparing a release. |
+| `accessibility-and-i18n-mobile` | Mobile accessibility and i18n in Ionic Angular: contrast, focus, ARIA, translations. Trigger on inclusive UX. |
+| `api-data-access-laravel-backend` | Ionic/Angular integration with Laravel APIs: HTTP services, DTOs, interceptors, auth. Trigger on backend consumption. |
+| `app-shell-navigation-blueprint` | Ionic Angular navigation blueprint: app shell, auth flows, guards, tab routing. Trigger on app routing. |
+| `capacitor-native-integration` | Capacitor native integration: plugins, permissions, lifecycle, web fallbacks. Trigger on camera, storage, native APIs. |
+| `code-generation-contract` | Mandatory output contract for Ionic Angular: file tree, contracts, screen states, tests. Trigger on screen generation. |
+| `design-system-and-ui-consistency` | Ionic Angular design consistency: tokens, base components, typography, layout states. Trigger on UI refactoring. |
+| `design-tokens-pipeline` | Design token pipeline for Ionic Angular: colors, spacing, CSS variables, Figma alignment. Trigger on styling/theming. |
+| `feature-delivery-orchestrator` | Orchestrates mobile feature delivery from Figma to release across skills and gates. Trigger on complete feature flows. |
+| `figma-to-feature-mapping` | Converts Figma screens into Ionic Angular technical backlog: routes, components, acceptance criteria. Trigger on design intake. |
+| `forms-validation-and-input-masks` | Mobile forms in Ionic Angular: reactive forms, masks, validation, error UX. Trigger on form input screens. |
+| `ionic-angular-architecture` | Ionic Angular architecture: feature modules, lean pages, domain services, clean routes. Trigger on component/feature architecture. |
+| `ionic-systematic-debugging` | Ionic/Capacitor systematic debugging: minimal test reproducers, bridge isolation. Trigger when diagnosing mobile bugs. |
+| `list-detail-search-and-filters` | List and detail flows in Ionic Angular: search, filters, pagination, virtual scroll. Trigger on catalog and list screens. |
+| `mobile-performance-and-rendering` | Mobile rendering performance: virtual scroll, image optimization, change detection, trackBy. Trigger on performance fixes. |
+| `screen-state-matrix` | Mandatory screen state matrix for Ionic: loading, success, empty, error, offline. Trigger when building screen states. |
+| `security-and-sensitive-data-mobile` | Mobile security in Ionic/Capacitor: secure storage, session cleanup, biometrics, tokens. Trigger on sensitive data/auth. |
+| `state-and-offline-mobile` | Mobile offline state & sync: local cache, network resilience, offline queue, conflict handling. Trigger on offline capabilities. |
+| `testing-and-release-readiness` | Mobile release readiness: unit/E2E tests, build checks, iOS/Android compatibility checklist. Trigger before merge/release. |
 
 ## Qualidade e Validação
 

@@ -1,6 +1,6 @@
 ---
 name: code-generation-contract
-description: "Enforces a mandatory output contract for Ionic Angular code generation, ensuring architecture, integration, screen states, and validation consistency. Use when requesting implementation of any screen, flow, or feature."
+description: "Mandatory output contract for Ionic Angular: file tree, contracts, screen states, tests. Trigger on screen generation."
 license: UNLICENSED
 ---
 
